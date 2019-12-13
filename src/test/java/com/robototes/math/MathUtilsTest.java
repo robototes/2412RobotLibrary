@@ -1,8 +1,21 @@
 package com.robototes.math;
 
-import static org.junit.Assert.*;
-import static com.robototes.math.MathUtils.*;
+import static com.robototes.math.MathUtils.EPSILON;
+import static com.robototes.math.MathUtils.constrain;
+import static com.robototes.math.MathUtils.cube;
+import static com.robototes.math.MathUtils.cubeValues;
+import static com.robototes.math.MathUtils.distance;
+import static com.robototes.math.MathUtils.epsilonEquals;
+import static com.robototes.math.MathUtils.map;
+import static com.robototes.math.MathUtils.runFunction;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
+
+import com.robototes.math.MathUtils.MathFunction;
 
 public class MathUtilsTest {
 
