@@ -15,7 +15,7 @@ repositories {
     }
 
     maven {
-        url = 'https://first.wpi.edu/FRC/roborio/maven/'
+        url = 'https://first.wpi.edu/FRC/roborio/maven/release/'
     }
 
     maven {
