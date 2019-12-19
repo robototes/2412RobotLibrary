@@ -33,6 +33,8 @@ public class Gearbox {
 	 */
 	public Gearbox(Rotations inputRotations, double gearboxRatio, Rotations outputRotations) {
 		ratio = new InterUnitRatio<RotationUnits, RotationUnits>(Rotations.mainUnit, gearboxRatio, Rotations.mainUnit);
+		ratio.from = inputRotations.getUnit();
+		ratio.to = outputRotations.getUnit();
 	}
 
 	/**
