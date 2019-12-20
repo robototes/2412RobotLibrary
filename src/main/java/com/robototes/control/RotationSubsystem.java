@@ -10,15 +10,14 @@ import com.robototes.units.UnitTypes.RotationUnits;
  * 
  * @author Eli Orona
  *
- * @param <T> Motors used
  */
-public class RotationSubsystem<T extends PIDMotorController<?>> implements PIDSubsystem<T, Rotations> {
+public class RotationSubsystem implements PIDSubsystem<Rotations> {
 
-	private T[] motors;
+	private PIDMotorController<?>[] motors;
 	private InterUnitRatio<RotationUnits, RotationUnits> rotationsToDistance;
 	private Rotations currentReference = new Rotations(0);
 
-	RotationSubsystem(T[] motors, InterUnitRatio<RotationUnits, RotationUnits> ratio) {
+	RotationSubsystem(PIDMotorController<?>[] motors, InterUnitRatio<RotationUnits, RotationUnits> ratio) {
 		this.motors = motors;
 		this.rotationsToDistance = ratio;
 	}
@@ -27,7 +26,7 @@ public class RotationSubsystem<T extends PIDMotorController<?>> implements PIDSu
 	public void addRefecence(Rotations addRefernce) {
 		currentReference = currentReference.add(addRefernce);
 		Rotations rotationReference = new Rotations(rotationsToDistance.calculateReverseRatio(currentReference));
-		for (T motor : motors) {
+		for (PIDMotorController<?> motor : motors) {
 			motor.setRotations(rotationReference);
 		}
 	}
@@ -35,7 +34,7 @@ public class RotationSubsystem<T extends PIDMotorController<?>> implements PIDSu
 	@Override
 	public Rotations getError() {
 		Rotations totalDistance = new Rotations(0);
-		for (T motor : motors) {
+		for (PIDMotorController<?> motor : motors) {
 			totalDistance.add(new Rotations(rotationsToDistance.calculateReverseRatio(motor.getRotations())));
 		}
 		totalDistance.divide(new Rotations(motors.length));
@@ -43,13 +42,13 @@ public class RotationSubsystem<T extends PIDMotorController<?>> implements PIDSu
 	}
 
 	@Override
-	public T[] getMotors() {
+	public PIDMotorController<?>[] getMotors() {
 		return motors;
 	}
 
 	@Override
 	public void setMotorSpeed(double speed) {
-		for (T motor : motors) {
+		for (PIDMotorController<?> motor : motors) {
 			motor.setSpeed(speed);
 		}
 	}
@@ -58,14 +57,14 @@ public class RotationSubsystem<T extends PIDMotorController<?>> implements PIDSu
 	public void setReference(Rotations reference) {
 		currentReference = reference;
 		Rotations rotationReference = new Rotations(rotationsToDistance.calculateReverseRatio(reference));
-		for (T motor : motors) {
+		for (PIDMotorController<?> motor : motors) {
 			motor.setRotations(rotationReference);
 		}
 	}
 
 	@Override
 	public void usePID() {
-		for (T motor : motors) {
+		for (PIDMotorController<?> motor : motors) {
 			motor.usePIDOutput();
 		}
 	}

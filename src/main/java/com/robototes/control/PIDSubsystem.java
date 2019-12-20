@@ -11,28 +11,28 @@ import com.robototes.units.IUnit;
  * @param <T> Motors used in the subsystem
  * @param <K> Unit type of the subsystem
  */
-public interface PIDSubsystem<T extends PIDMotorController<?>, K extends IUnit<K>> {
+public interface PIDSubsystem<T extends IUnit<T>> {
 
 	/**
 	 * Add to the reference of the subsystem
 	 * 
 	 * @param addRefernce Value of the reference to add
 	 */
-	public void addRefecence(K addRefernce);
+	public void addRefecence(T addRefernce);
 
 	/**
 	 * Gets the total error from the starting position
 	 * 
 	 * @return A value representing the error
 	 */
-	public K getError();
+	public T getError();
 
 	/**
 	 * Gets an array of the motors used
 	 * 
 	 * @return The motors used
 	 */
-	public T[] getMotors();
+	public PIDMotorController<?>[] getMotors();
 
 	/**
 	 * Sets the speed of all of the motors
@@ -46,7 +46,7 @@ public interface PIDSubsystem<T extends PIDMotorController<?>, K extends IUnit<K
 	 * 
 	 * @param reference Value of the reference
 	 */
-	public void setReference(K reference);
+	public void setReference(T reference);
 
 	/**
 	 * Uses the PID, allowing for things to be set, then used at a certain time

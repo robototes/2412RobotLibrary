@@ -13,10 +13,10 @@ import edu.wpi.first.wpilibj.command.Command;
  * @param <T> Unit of the Subsystem
  */
 public class PIDAddCommand<T extends IUnit<T>> extends Command {
-	private PIDSubsystem<?, T> PIDSubsystem;
+	private PIDSubsystem<T> PIDSubsystem;
 	private T addPositionUnit;
 
-	public PIDAddCommand(PIDSubsystem<?, T> PIDSubsystem, T addPositionUnit) {
+	public PIDAddCommand(PIDSubsystem<T> PIDSubsystem, T addPositionUnit) {
 		this.PIDSubsystem = PIDSubsystem;
 		this.addPositionUnit = addPositionUnit;
 	}

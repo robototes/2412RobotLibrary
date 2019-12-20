@@ -7,7 +7,7 @@ import com.robototes.units.Rotations;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-public interface IDrivebase<T extends PIDMotorController<?>> {
+public interface IDrivebase {
 
 	public enum ControlMode {
 		VECTOR, NONE, MANUAL, ROTATION, DISTANCE
@@ -23,7 +23,7 @@ public interface IDrivebase<T extends PIDMotorController<?>> {
 
 	public Rotations getHeading();
 
-	public T[] getMotors();
+	public PIDMotorController<?>[] getMotors();
 
 	public Distance getTotalDistance();
 
