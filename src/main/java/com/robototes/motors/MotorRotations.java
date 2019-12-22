@@ -27,6 +27,11 @@ public abstract class MotorRotations extends Rotations {
 		public SparkMaxRotations(Rotations rotations) {
 			super(rotations);
 		}
+
+		@Override
+		public String getUnit() {
+			return "SparkMax_rot";
+		}
 	}
 
 	public MotorRotations(double value) {
@@ -36,4 +41,7 @@ public abstract class MotorRotations extends Rotations {
 	public MotorRotations(Rotations rotations) {
 		super(rotations.getValue());
 	}
+
+	@Override
+	public abstract String getUnit();
 }

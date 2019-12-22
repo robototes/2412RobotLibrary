@@ -19,11 +19,11 @@ import com.robototes.utils.ArrayUtils;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-public class TankDrive<T extends PIDMotorController<?>> implements IDrivebase<T> {
+public class TankDrive implements IDrivebase {
 
-	DistanceSubsystem<T> left;
-	DistanceSubsystem<T> right;
-	T[] motors;
+	DistanceSubsystem left;
+	DistanceSubsystem right;
+	PIDMotorController<?>[] motors;
 
 	ControlMode mode;
 
@@ -31,11 +31,11 @@ public class TankDrive<T extends PIDMotorController<?>> implements IDrivebase<T>
 	Rotations rotationSetPostition;
 	Gyro gyro;
 
-	public TankDrive(T[] leftMotors, T[] rightMotors,
+	public TankDrive(PIDMotorController<?>[] leftMotors, PIDMotorController<?>[] rightMotors,
 			InterUnitRatio<RotationUnits, DistanceUnits> motorRotationsToDistanceDriven, PIDConstants rotationConstants,
 			Gyro gyro) {
-		left = new DistanceSubsystem<T>(leftMotors, motorRotationsToDistanceDriven);
-		right = new DistanceSubsystem<T>(rightMotors, motorRotationsToDistanceDriven);
+		left = new DistanceSubsystem(leftMotors, motorRotationsToDistanceDriven);
+		right = new DistanceSubsystem(rightMotors, motorRotationsToDistanceDriven);
 
 		motors = ArrayUtils.stackArrays(leftMotors, rightMotors);
 
@@ -109,7 +109,7 @@ public class TankDrive<T extends PIDMotorController<?>> implements IDrivebase<T>
 	}
 
 	@Override
-	public T[] getMotors() {
+	public PIDMotorController<?>[] getMotors() {
 		return motors;
 	}
 
@@ -161,7 +161,7 @@ public class TankDrive<T extends PIDMotorController<?>> implements IDrivebase<T>
 	public void stop() {
 		setControlMode(ControlMode.NONE);
 
-		for (T motor : motors) {
+		for (PIDMotorController<?> motor : motors) {
 			motor.setSpeed(0);
 		}
 	}
@@ -174,7 +174,7 @@ public class TankDrive<T extends PIDMotorController<?>> implements IDrivebase<T>
 		double input = rotationSetPostition.subtract(getHeading()).getValue();
 		double output = rotationPIDController.getOutput(input, new Time(5, TimeUnits.MILLISECOND).getValue());
 
-		for (T motor : motors) {
+		for (PIDMotorController<?> motor : motors) {
 			motor.setSpeed(output);
 		}
 	}

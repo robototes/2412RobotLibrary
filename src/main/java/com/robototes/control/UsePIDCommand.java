@@ -6,11 +6,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class UsePIDCommand<T extends IUnit<T>> extends Command {
 
-	private PIDSubsystem<?, T> PIDSubsystem;
+	private PIDSubsystem<T> PIDSubsystem;
 	private T finalPosition;
 	private double howCloseMustItBe;
 
-	public UsePIDCommand(PIDSubsystem<?, T> PIDSubsystem, T finalPosition, double howCloseMustItBe) {
+	public UsePIDCommand(PIDSubsystem<T> PIDSubsystem, T finalPosition, double howCloseMustItBe) {
 		this.PIDSubsystem = PIDSubsystem;
 		this.finalPosition = finalPosition;
 		this.howCloseMustItBe = howCloseMustItBe;
