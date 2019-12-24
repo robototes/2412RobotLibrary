@@ -10,4 +10,10 @@ public class UsePIDSetCommand<T extends IUnit<T>> extends CommandGroup {
 		addSequential(new PIDSetCommand<T>(PIDSubsystem, setPosition));
 		addSequential(new UsePIDCommand<T>(PIDSubsystem, setPosition, howCloseMustItBe));
 	}
+
+	@Override
+	public void execute() {
+		super.execute();
+
+	}
 }

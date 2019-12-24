@@ -23,7 +23,12 @@ public class UsePIDCommand<T extends IUnit<T>> extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		return Math.abs(PIDSubsystem.getError().subtract(finalPosition).getValue()) < howCloseMustItBe;
+		boolean done = false;
+		if (PIDSubsystem.getError() != null) {
+			done = Math.abs(PIDSubsystem.getError().subtract(finalPosition).getValue()) < howCloseMustItBe;
+		}
+
+		return done;
 	}
 
 }
