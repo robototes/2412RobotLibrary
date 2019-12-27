@@ -10,7 +10,7 @@ import com.robototes.units.Time;
 import com.robototes.units.UnitTypes.TimeUnits;
 
 /**
- * A wrapper class for CANSparkMax by Revrobotics. Allows for PID Control of the
+ * A wrapper class for CANSparkMax by RevRobotics. Allows for PID Control of the
  * motor
  * 
  * @author Eli Orona
