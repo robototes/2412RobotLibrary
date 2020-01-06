@@ -62,7 +62,7 @@ public class PIDCanSparkMax extends CANSparkMax implements PIDMotorController<Sp
 
 	@Override
 	public double usePIDOutput() {
-		return usePIDOutput(new Time(5, TimeUnits.MILLISECOND)); // loop time of robot
+		return usePIDOutput(new Time(50, TimeUnits.MILLISECOND)); // loop time of robot
 	}
 
 	@Override

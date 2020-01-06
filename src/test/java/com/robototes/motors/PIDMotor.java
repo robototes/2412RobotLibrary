@@ -39,7 +39,7 @@ public class PIDMotor<T extends MotorRotations> implements PIDMotorController<T>
 
 	@Override
 	public double usePIDOutput() {
-		return usePIDOutput(new Time(20, TimeUnits.MILLISECOND));
+		return usePIDOutput(new Time(50, TimeUnits.MILLISECOND));
 	}
 
 	@Override
