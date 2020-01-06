@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="bin/default" path="src/main/java">
+	<classpathentry kind="src" output="bin/main" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -8,61 +8,12 @@
 	</classpathentry>
 	<classpathentry kind="src" output="bin/test" path="src/test/java">
 		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.wpilibj/wpilibj-java/2019.4.1/181d600aa0815fca956ff6903748e99be9025949/wpilibj-java-2019.4.1.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.wpilibj/wpilibj-java/2019.4.1/ba505e826a3d95e2acc68d1c219bb55781cd2b94/wpilibj-java-2019.4.1-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.ntcore/ntcore-java/2019.4.1/9dd5e2cf0d5080b10e19fb88d9372a170f7a034/ntcore-java-2019.4.1.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.ntcore/ntcore-java/2019.4.1/ca376b47a204864e5bcd5b83d6219e07b42416c0/ntcore-java-2019.4.1-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.wpiutil/wpiutil-java/2019.4.1/5baa3eec5cac7654236b16afd3f0198bbe5dc946/wpiutil-java-2019.4.1.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.wpiutil/wpiutil-java/2019.4.1/9b52975ba2540ee79b4ef0d2657104867e8e61d0/wpiutil-java-2019.4.1-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.thirdparty.frc2019.opencv/opencv-java/3.4.4-4/5c546c223045ef680e643d97726623031831b1c5/opencv-java-3.4.4-4.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.thirdparty.frc2019.opencv/opencv-java/3.4.4-4/d433924d21ac1a7c0375495d982f61eb047484cb/opencv-java-3.4.4-4-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.cscore/cscore-java/2019.4.1/c7eee2f82bf88c65f62a042828bf0944a2a475bb/cscore-java-2019.4.1.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.cscore/cscore-java/2019.4.1/372c1bff1cae104383c1930bcda43ab9a2b8dce9/cscore-java-2019.4.1-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.cameraserver/cameraserver-java/2019.4.1/d0d4a27f87a6b87eeed4ddc21964a0bc6e9e372/cameraserver-java-2019.4.1.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.cameraserver/cameraserver-java/2019.4.1/e7853496f55bdfbd5142b91f916cbed6cba7372/cameraserver-java-2019.4.1-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.hal/hal-java/2019.4.1/fe4aec01e745838fa6997fba26b0917e35af9480/hal-java-2019.4.1.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/edu.wpi.first.hal/hal-java/2019.4.1/88dcf5f101b260d9a332f5dfe4eb373d26e70a68/hal-java-2019.4.1-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/com.ctre.phoenix/api-java/5.12.0/67bee152c70e47d981b1ecb1b7d6b59465aa506e/api-java-5.12.0.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/com.ctre.phoenix/api-java/5.12.0/aca8d84775394631caa2992da07e3b11f14bc513/api-java-5.12.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/com.ctre.phoenix/wpiapi-java/5.12.0/a355071240b46081f86795119258fa2ffa1401e5/wpiapi-java-5.12.0.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/com.ctre.phoenix/wpiapi-java/5.12.0/7ba7915eee25afd745d0c76be698132d71c8f519/wpiapi-java-5.12.0-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/com.revrobotics.frc/SparkMax-java/1.1.9/b43056fe8c9091a3fbc599ce4460bf8c4f4c51b4/SparkMax-java-1.1.9.jar" sourcepath="C:/Users/s-oronae/.gradle/caches/modules-2/files-2.1/com.revrobotics.frc/SparkMax-java/1.1.9/7476b1fe2651507a6a4c9533ea77994254af4025/SparkMax-java-1.1.9-sources.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/s-oronae/.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
