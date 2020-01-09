@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  * @param <T> Unit of the Subsystem
  */
+@Deprecated
 public class PIDAddCommand<T extends IUnit<T>> extends Command {
 	private PIDSubsystem<T> PIDSubsystem;
 	private T addPositionUnit;

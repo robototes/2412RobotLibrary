@@ -16,6 +16,7 @@ import com.robototes.units.UnitTypes.TimeUnits;
  * @author Eli Orona
  *
  */
+@Deprecated
 public class PIDCanSparkMax extends CANSparkMax implements PIDMotorController<SparkMaxRotations> {
 
 	private CANEncoder encoder;

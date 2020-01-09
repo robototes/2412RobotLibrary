@@ -1,8 +1,12 @@
 package com.robototes.math;
 
+import com.robototes.math.MathUtils.MathFunction;
+
 /**
+ * This is a class that represents an <code>y =</code> equation with
+ * <code>x</code>. This is useful for regression algorithms and functions.
  * 
- * @author OroArmor
+ * @author Eli Orona
  *
  */
 public class Equation {
@@ -17,6 +21,11 @@ public class Equation {
 		this.terms = terms;
 	}
 
+	/**
+	 * 
+	 * @param x The x value of the graph
+	 * @return The y value of the function at point x
+	 */
 	public double calculate(double x) {
 
 		double t = 1;
@@ -30,6 +39,10 @@ public class Equation {
 		return y;
 	}
 
+	/**
+	 * 
+	 * @return The terms of the equation going from x^0 to x^n
+	 */
 	public double[] getTerms() {
 		return terms;
 	}
@@ -63,5 +76,14 @@ public class Equation {
 			}
 		}
 		return true;
+	}
+
+	public MathFunction toMathFunction() {
+		return new MathFunction() {
+			@Override
+			public double compute(double x) {
+				return calculate(x);
+			}
+		};
 	}
 }

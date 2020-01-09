@@ -1,6 +1,8 @@
 package com.robototes.math;
 
 /**
+ * An interface that allows for the implementer to have add, subtract, multiply,
+ * and divide methods
  * 
  * @author Eli Orona
  *

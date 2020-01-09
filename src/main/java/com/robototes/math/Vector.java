@@ -2,6 +2,12 @@ package com.robototes.math;
 
 import static java.lang.Math.atan2;
 
+/**
+ * A vector for the program, can be a point or a heading and magnitude
+ * 
+ * @author Eli Orona
+ *
+ */
 public class Vector {
 
 	/**
