@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  * @param <K> Unit type of the subsystem
  */
+@Deprecated
 public class PIDSetCommand<K extends IUnit<K>> extends Command {
 	private PIDSubsystem<K> PIDSubsystem;
 	private K setPositionUnit;

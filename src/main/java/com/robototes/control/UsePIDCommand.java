@@ -4,6 +4,7 @@ import com.robototes.units.IUnit;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+@Deprecated
 public class UsePIDCommand<T extends IUnit<T>> extends Command {
 
 	private PIDSubsystem<T> PIDSubsystem;

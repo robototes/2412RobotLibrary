@@ -11,6 +11,7 @@ import com.robototes.units.UnitTypes.RotationUnits;
  * @author Eli Orona
  *
  */
+@Deprecated
 public class RotationSubsystem implements PIDSubsystem<Rotations> {
 
 	private PIDMotorController<?>[] motors;

@@ -7,6 +7,7 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 /**
+ * A bunch of helpful math utilities for programming a robot
  * 
  * @author Eli Orona
  *
@@ -14,6 +15,8 @@ import static java.lang.Math.sqrt;
 public class MathUtils {
 
 	/**
+	 * A class that can compute complex functions on a single value. Similar to
+	 * {@link Equation}, but can trig and non whole powers
 	 * 
 	 * @author Eli Orona
 	 *
@@ -21,13 +24,13 @@ public class MathUtils {
 	public static interface MathFunction {
 		/**
 		 * 
-		 * @param i Input
+		 * @param x Input
 		 * @return Output
 		 */
-		public double compute(double i);
+		public double compute(double x);
 	}
 
-	public static double EPSILON = 1e-9;;
+	public static double EPSILON = 1e-9;
 
 	private static MathFunction cube = (i) -> pow(i, 3);
 

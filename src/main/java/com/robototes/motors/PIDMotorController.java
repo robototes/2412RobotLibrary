@@ -10,6 +10,7 @@ import com.robototes.units.Time;
  *
  * @param <T> The rotation type of the motor
  */
+@Deprecated
 public interface PIDMotorController<T extends MotorRotations> {
 
 	/**

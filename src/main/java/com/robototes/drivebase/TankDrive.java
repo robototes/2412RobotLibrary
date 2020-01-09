@@ -19,6 +19,7 @@ import com.robototes.utils.ArrayUtils;
 
 import edu.wpi.first.wpilibj.Joystick;
 
+@Deprecated
 public class TankDrive implements IDrivebase {
 
 	DistanceSubsystem left;

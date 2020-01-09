@@ -11,6 +11,7 @@ import com.robototes.units.IUnit;
  * @param <T> Motors used in the subsystem
  * @param <K> Unit type of the subsystem
  */
+@Deprecated
 public interface PIDSubsystem<T extends IUnit<T>> {
 
 	/**
