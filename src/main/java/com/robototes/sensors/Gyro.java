@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.SPI.Port;
  * @author Eli Orona
  *
  */
+@Deprecated
 public class Gyro extends ADXRS450_Gyro {
 
 	public Gyro() {
