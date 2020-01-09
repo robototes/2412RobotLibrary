@@ -1,6 +1,8 @@
 package com.robototes.math;
 
 /**
+ * An interface for ratios, allowing for implementing classes to have more
+ * control on the implementation of the ratio
  * 
  * @author Eli Orona
  *

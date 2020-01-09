@@ -1,5 +1,12 @@
 package com.robototes.math;
 
+/**
+ * This is a class that can do "simple" regression as in given n points, it
+ * makes an n-1 degree polynomial
+ * 
+ * @author Eli Orona
+ *
+ */
 public class SimpleRegression {
 
 	/**

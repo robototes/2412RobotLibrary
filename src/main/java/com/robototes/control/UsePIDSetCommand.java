@@ -4,6 +4,7 @@ import com.robototes.units.IUnit;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
+@Deprecated
 public class UsePIDSetCommand<T extends IUnit<T>> extends CommandGroup {
 
 	public UsePIDSetCommand(PIDSubsystem<T> PIDSubsystem, T setPosition, double howCloseMustItBe) {
