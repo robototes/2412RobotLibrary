@@ -40,6 +40,8 @@ deploy {
 }
 
 publishing {
+    group = 'com.robototes'
+
     repositories {
         maven {
             name = "GitHubPackages"
