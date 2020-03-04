@@ -139,6 +139,10 @@ public class Limelight {
 		return networkTable.getEntry("tx").getDouble(Double.NaN);
 	}
 
+	public double getTS() {
+		return networkTable.getEntry("ts").getDouble(Double.NaN);
+	}
+
 	public LEDMode getLedMode() {
 		return ledMode;
 	}
