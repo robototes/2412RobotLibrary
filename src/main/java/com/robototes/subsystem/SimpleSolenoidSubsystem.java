@@ -19,12 +19,12 @@ public class SimpleSolenoidSubsystem extends SimpleSubsystem {
     //Extend the Solenoid
     @Override
     public void in() {
-        solenoid.set(true);
+        solenoid.set(!super.getInverted());
     }
     //Retract the Solenoid
     @Override
     public void out() {
-        solenoid.set(false);
+        solenoid.set(super.getInverted());
     }
     
 }

@@ -2,6 +2,8 @@ package com.robototes.subsystem;
 
 import java.util.Arrays;
 
+import com.robototes.math.MathUtils;
+
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 
@@ -13,7 +15,8 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 public class SimpleMotorSubsystem extends SimpleSubsystem {
     //Motor Controller/Controller Group
     private SpeedController controller;
-
+    //Max Motor Speed
+    private double maxSpeed = 1;
     //Constructor
     public SimpleMotorSubsystem(SpeedController... speedControllers){
         if(speedControllers.length > 1)
@@ -25,12 +28,12 @@ public class SimpleMotorSubsystem extends SimpleSubsystem {
     //Set the Motor to run in
 	@Override
     public void in() {
-        controller.set(1);
+        controller.set(super.getInverted() ? maxSpeed : -maxSpeed);
     }
     //Set the motor to run out
     @Override
     public void out() {
-        controller.set(-1);
+        controller.set(super.getInverted() ? -maxSpeed : maxSpeed);
     }
     //Stop the motor
     public void stop(){
@@ -38,7 +41,16 @@ public class SimpleMotorSubsystem extends SimpleSubsystem {
     }
     //Set the motor to run at a set speed
     public void set(double speed){
-        controller.set(speed);
+        controller.set(MathUtils.constrain(speed, -maxSpeed, maxSpeed));
     }
-    
+    //getters and setters for max speed
+    /**
+     * @param val the max speed the motor can be set to (from 0 - 1)
+     */
+    public void setMaxSpeed(double val){
+        maxSpeed = val;
+    }
+    public double getMaxSpeed(){
+        return maxSpeed;
+    }
 }

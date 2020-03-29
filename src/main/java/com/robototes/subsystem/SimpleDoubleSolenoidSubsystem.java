@@ -21,13 +21,13 @@ public class SimpleDoubleSolenoidSubsystem extends SimpleSubsystem {
     //extend the Double Solenoid
     @Override
     public void in() {
-        solenoid.set(Value.kReverse);
+        solenoid.set(super.getInverted() ? Value.kReverse : Value.kForward);
     }
     
     //Retract the Double Solenoid
     @Override
     public void out() {
-        solenoid.set(Value.kForward);
+        solenoid.set(super.getInverted() ? Value.kForward : Value.kReverse);
     }
 
     //Stop/Turn off the Double Solenoid
