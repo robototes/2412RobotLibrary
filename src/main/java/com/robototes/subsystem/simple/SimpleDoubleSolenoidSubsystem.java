@@ -1,4 +1,4 @@
-package com.robototes.subsystem;
+package com.robototes.subsystem.simple;
 
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
