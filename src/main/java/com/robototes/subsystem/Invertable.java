@@ -30,9 +30,8 @@ public interface Invertable {
 	public default boolean invertBoolean(boolean input) {
 		if (isInverted()) {
 			return !input;
-		} else {
-			return input;
 		}
+		return input;
 	}
 
 	/**
@@ -44,9 +43,8 @@ public interface Invertable {
 	public default double invertDouble(double input) {
 		if (isInverted()) {
 			return -input;
-		} else {
-			return input;
 		}
+		return input;
 	}
 
 	/**
@@ -59,8 +57,7 @@ public interface Invertable {
 	public default <T> T invertGeneric(T primary, T inverted) {
 		if (isInverted()) {
 			return inverted;
-		} else {
-			return primary;
 		}
+		return primary;
 	}
 }

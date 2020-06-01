@@ -32,7 +32,7 @@ public class MathUtils {
 
 	public static double EPSILON = 1e-9;
 
-	private static MathFunction cube = (i) -> pow(i, 3);
+	private static MathFunction cube = i -> pow(i, 3);
 
 	/**
 	 * Constrains a value between two other values
