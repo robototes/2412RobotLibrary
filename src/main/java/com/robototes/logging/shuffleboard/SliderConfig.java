@@ -1,31 +1,50 @@
 package com.robototes.logging.shuffleboard;
 
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class SliderConfig implements IConfig<Double> {
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
+import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
 
-	Supplier<Double> getter;
-	Consumer<Double> setter;
+/**
+ * A Slider Bar configuration class for shuffle board widgets
+ * 
+ * @author Eli Orona
+ *
+ */
+public class SliderConfig extends NumberConfig<SliderConfig> {
 
-	public SliderConfig(Supplier<Double> getter, Consumer<Double> setter) {
-		this.getter = getter;
-		this.setter = setter;
+	/**
+	 * Creates a new {@link SliderConfig}
+	 * 
+	 * @param getter  The data supplier
+	 * @param setter  The data user
+	 * @param name    The name of the widget
+	 * @param tabName The tab for the widget
+	 */
+	public SliderConfig(Supplier<Double> getter, Consumer<Double> setter, String name, String tabName) {
+		super(getter, setter, name, tabName);
 	}
 
 	@Override
-	public DisplayWidgetType getType() {
-		return DisplayWidgetType.SLIDER;
+	public WidgetType getType() {
+		return BuiltInWidgets.kNumberSlider;
 	}
 
-	@Override
-	public Supplier<Double> getGetter() {
-		return getter;
-	}
+	/**
+	 * Sets the min and max of the slider
+	 * 
+	 * @param min min
+	 * @param max max
+	 * @return this
+	 */
+	public SliderConfig withMinMax(int min, int max) {
+		if (min > max) {
+			throw new IllegalArgumentException("min, " + min + ", is greater than max, " + max + "!");
+		}
 
-	@Override
-	public Consumer<Double> getSetter() {
-		return setter;
+		return this.withProperties(Map.of("min", min, "max", max));
 	}
 
 }
