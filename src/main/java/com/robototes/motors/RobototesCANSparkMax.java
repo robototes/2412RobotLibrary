@@ -11,6 +11,12 @@ import com.revrobotics.CANPIDController;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.EncoderType;
 
+/**
+ * Note: This is to be used for testing only, and the class cannot be mocked
+ * 
+ * @author Eli Orona
+ *
+ */
 @SuppressWarnings("unused")
 public class RobototesCANSparkMax extends CANSparkMax {
 
