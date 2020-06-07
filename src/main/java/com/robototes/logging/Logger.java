@@ -16,6 +16,12 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class Logger {
 
+	private File m_logFile;
+	private FileOutputStream m_outputStream;
+
+	private LogType m_minLogType;
+
+	private static Logger m_instance = null;
 	private static boolean m_initialized = false;
 
 	private Logger(String fileName, LogType minLogType) {
@@ -29,12 +35,6 @@ public class Logger {
 		}
 
 	}
-
-	private static Logger m_instance = null;
-
-	private File m_logFile;
-	private FileOutputStream m_outputStream;
-	private LogType m_minLogType;
 
 	/**
 	 * Initalizes the logger

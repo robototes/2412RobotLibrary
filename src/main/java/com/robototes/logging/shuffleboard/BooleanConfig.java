@@ -8,36 +8,24 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.SimpleWidget;
 
-/**
- * This is a template class for all the number widgets
- * 
- * @author Eli Orona
- *
- * @param <S> The type of the widget
- */
-@SuppressWarnings("unchecked")
-public abstract class NumberConfig<S extends NumberConfig<S>> implements IConfigurable<Double, S> {
 
-	private final Supplier<Double> getter;
-	private final Consumer<Double> setter;
+@SuppressWarnings("unchecked")
+public abstract class BooleanConfig<S extends BooleanConfig<S>> implements IConfigurable<Boolean, S> {
+
+	private final Supplier<Boolean> getter;
+	private final Consumer<Boolean> setter;
 	private final String name;
 	private final String tabName;
 
 	private boolean built = false;
 	private Map<String, Object> allProperties;
 	private SimpleWidget widget;
+	
+	private boolean oldValue;
 
 	private NetworkTableEntry entry;
-
-	/**
-	 * Creates a new {@link NumberConfig}
-	 * 
-	 * @param getter  The data supplier
-	 * @param setter  The data user
-	 * @param name    The name of the widget
-	 * @param tabName The tab for the widget
-	 */
-	public NumberConfig(Supplier<Double> getter, Consumer<Double> setter, String name, String tabName) {
+	
+	public BooleanConfig(Supplier<Boolean> getter, Consumer<Boolean> setter, String name, String tabName) {
 		this.getter = getter;
 		this.setter = setter;
 		this.name = name;
@@ -45,41 +33,34 @@ public abstract class NumberConfig<S extends NumberConfig<S>> implements IConfig
 
 		widget = Shuffleboard.getTab(getTabName()).add(getName(), getter).withWidget(getType());
 	}
-
-	@Override
-	public Supplier<Double> getReporter() {
+	
+	public Supplier<Boolean> getReporter() {
 		return getter;
 	}
 
-	@Override
-	public Consumer<Double> getSetter() {
+	public Consumer<Boolean> getSetter() {
 		return setter;
 	}
-
-	/**
-	 * Initializes this against {@link ShuffleBoardManager}
-	 */
+	
 	public void initializeWidget() {
 		ShuffleBoardManager.getInstance().add(this);
 		entry = widget.withProperties(allProperties).getEntry();
-		pastGet = getter.get();
+		oldValue = getter.get();
 	}
-
-	private double pastGet;
-
+	
 	@Override
 	public void update() {
-		double value = entry.getDouble(Double.NaN);
+		Boolean value = entry.getBoolean(false);	// Get the value of the shuffleboard widget
 
-		if (value == pastGet) {
-			double newValue = getter.get();
-			entry.setDouble(newValue);
-			pastGet = newValue;
-		} else if (value != Double.NaN) {
-			setter.accept(value);
+		if (value == oldValue) {					// if it's the same to what it was last update 
+			boolean newValue = getter.get();		// get the object's value (object == whatever you have the thing set to)
+			entry.setBoolean(newValue);				// Set the widgets value to the object's value i.e. update the widget
+			oldValue = newValue;
+		} else {              					  
+			setter.accept(value);					// Set's the objects value to what the entry 
 		}
 	}
-
+	
 	@Override
 	public String getName() {
 		return name;
@@ -89,7 +70,7 @@ public abstract class NumberConfig<S extends NumberConfig<S>> implements IConfig
 	public String getTabName() {
 		return tabName;
 	}
-
+	
 	@Override
 	public S withSize(int width, int height) {
 		checkNotBuilt();
@@ -127,5 +108,5 @@ public abstract class NumberConfig<S extends NumberConfig<S>> implements IConfig
 	public boolean hasBeenBuilt() {
 		return built;
 	}
-
+	
 }
