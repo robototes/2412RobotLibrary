@@ -1,7 +1,7 @@
 package com.robototes.logging.shuffleboard;
 
 public class ExampleCode {
-	SliderConfig speedConfig = new SliderConfig(this::getSpeed, this::setSpeed, "Speed configuration",
+	NumberSlider speedConfig = new NumberSlider(this::getSpeed, this::setSpeed, "Speed configuration",
 			"My subsystem idea").withPosition(1, 1).withSize(2, 1).withMinMax(-1, 1).build();
 
 	double speed = 0;

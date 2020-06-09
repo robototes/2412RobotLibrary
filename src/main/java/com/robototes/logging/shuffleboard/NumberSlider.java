@@ -13,17 +13,17 @@ import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
  * @author Eli Orona
  *
  */
-public class SliderConfig extends NumberConfig<SliderConfig> {
+public class NumberSlider extends NumberConfig<NumberSlider> {
 
 	/**
-	 * Creates a new {@link SliderConfig}
+	 * Creates a new {@link NumberSlider}
 	 * 
 	 * @param getter  The data supplier
 	 * @param setter  The data user
 	 * @param name    The name of the widget
 	 * @param tabName The tab for the widget
 	 */
-	public SliderConfig(Supplier<Double> getter, Consumer<Double> setter, String name, String tabName) {
+	public NumberSlider(Supplier<Double> getter, Consumer<Double> setter, String name, String tabName) {
 		super(getter, setter, name, tabName);
 	}
 
@@ -39,7 +39,7 @@ public class SliderConfig extends NumberConfig<SliderConfig> {
 	 * @param max max
 	 * @return this
 	 */
-	public SliderConfig withMinMax(int min, int max) {
+	public NumberSlider withMinMax(int min, int max) {
 		if (min > max) {
 			throw new IllegalArgumentException("min, " + min + ", is greater than max, " + max + "!");
 		}
