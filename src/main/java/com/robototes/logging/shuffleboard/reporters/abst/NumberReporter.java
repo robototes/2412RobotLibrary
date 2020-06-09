@@ -3,7 +3,7 @@ package com.robototes.logging.shuffleboard.reporters.abst;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import com.robototes.logging.shuffleboard.IConfigurable;
+import com.robototes.logging.shuffleboard.IReporter;
 import com.robototes.logging.shuffleboard.ShuffleBoardManager;
 
 import edu.wpi.first.networktables.NetworkTableEntry;
@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.shuffleboard.SimpleWidget;
  * @param <S> The type of the widget
  */
 @SuppressWarnings("unchecked")
-public abstract class NumberReporter<S extends NumberReporter<S>> implements IConfigurable<Double, S> {
+public abstract class NumberReporter<S extends NumberReporter<S>> implements IReporter<Double, S> {
 
 	private final Supplier<Double> getter;
 	private final String name;
