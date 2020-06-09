@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import com.robototes.logging.shuffleboard.reporters.abst.NumberReporter;
 
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
 
 public class NumberBar extends NumberReporter<NumberBar> {
@@ -14,7 +15,7 @@ public class NumberBar extends NumberReporter<NumberBar> {
 
 	@Override
 	public WidgetType getType() {
-		return null;
+		return BuiltInWidgets.kNumberBar;
 	}
 
 }
