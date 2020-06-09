@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.Timer;
 /**
  * The logger class, in charge of logging data to files during matches and
  * testing
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -25,7 +25,7 @@ public class Logger {
 	private static boolean m_initialized = false;
 
 	private Logger(String fileName, LogType minLogType) {
-		this.m_minLogType = minLogType;
+		m_minLogType = minLogType;
 		m_logFile = new File(Filesystem.getDeployDirectory().getAbsolutePath() + fileName);
 		try {
 			m_logFile.createNewFile();
@@ -38,7 +38,7 @@ public class Logger {
 
 	/**
 	 * Initalizes the logger
-	 * 
+	 *
 	 * @param fileName   The file to log data to
 	 * @param minLogType The minimum level for logging
 	 */
@@ -53,7 +53,7 @@ public class Logger {
 
 	/**
 	 * Logs the data if the type is valid to the file
-	 * 
+	 *
 	 * @param data The data to log
 	 * @param type The type of the log
 	 */
@@ -72,7 +72,7 @@ public class Logger {
 
 	/**
 	 * Gets the instance of the Logger
-	 * 
+	 *
 	 * @return Logger instance
 	 */
 	public static Logger getInstance() {

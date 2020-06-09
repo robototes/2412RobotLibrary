@@ -3,7 +3,7 @@ package com.robototes.logging;
 /**
  * A level identifier for logging, allows for different types of logs to be
  * recorded
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -41,7 +41,7 @@ public enum LogType {
 
 	/**
 	 * Gets the LogType from an integer
-	 * 
+	 *
 	 * @param logLevel The integer value of the LogType
 	 * @return The LogType of the int, but if the int is {@code>4} or {@code<1} the
 	 *         method returns DEFAULT
@@ -60,7 +60,7 @@ public enum LogType {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The log level of the LogType
 	 */
 	public int getLogLevel() {
