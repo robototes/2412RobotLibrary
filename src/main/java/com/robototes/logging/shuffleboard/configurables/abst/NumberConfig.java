@@ -1,8 +1,11 @@
-package com.robototes.logging.shuffleboard;
+package com.robototes.logging.shuffleboard.configurables.abst;
 
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+
+import com.robototes.logging.shuffleboard.IConfigurable;
+import com.robototes.logging.shuffleboard.ShuffleBoardManager;
 
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;

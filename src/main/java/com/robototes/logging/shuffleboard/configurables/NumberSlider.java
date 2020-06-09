@@ -1,8 +1,10 @@
-package com.robototes.logging.shuffleboard;
+package com.robototes.logging.shuffleboard.configurables;
 
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+
+import com.robototes.logging.shuffleboard.configurables.abst.NumberConfig;
 
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
