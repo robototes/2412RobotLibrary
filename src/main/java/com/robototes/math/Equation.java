@@ -62,28 +62,22 @@ public class Equation {
 	public boolean equals(Object o) {
 		if (!(o instanceof Equation)) {
 			return false;
-		} else {
-			Equation other = (Equation) o;
+		}
+		Equation other = (Equation) o;
 
-			if (other.terms.length != this.terms.length) {
+		if (other.terms.length != this.terms.length) {
+			return false;
+		}
+
+		for (int i = 0; i < this.terms.length; i++) {
+			if (!MathUtils.epsilonEquals(this.terms[i], other.terms[i], MathUtils.EPSILON)) {
 				return false;
-			}
-
-			for (int i = 0; i < this.terms.length; i++) {
-				if (!MathUtils.epsilonEquals(this.terms[i], other.terms[i], MathUtils.EPSILON)) {
-					return false;
-				}
 			}
 		}
 		return true;
 	}
 
 	public MathFunction toMathFunction() {
-		return new MathFunction() {
-			@Override
-			public double compute(double x) {
-				return calculate(x);
-			}
-		};
+		return x -> calculate(x);
 	}
 }
