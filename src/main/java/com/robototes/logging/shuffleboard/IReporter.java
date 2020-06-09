@@ -81,7 +81,7 @@ public interface IReporter<T, S extends IReporter<T, S>> {
 	 */
 	default void checkNotBuilt() {
 		if (hasBeenBuilt()) {
-			throw new UnsupportedOperationException("Object has been build already");
+			throw new UnsupportedOperationException("Object has been built already");
 		}
 	}
 
