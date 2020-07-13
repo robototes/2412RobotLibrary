@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.SPI.Port;
 
 /**
  * An extension of ADXRS450_Gyro so that new programmers can do it easier.
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -25,10 +25,10 @@ public class Gyro extends ADXRS450_Gyro {
 
 	/**
 	 * Converts the angle to a rotation, constrained between 0 and 1
-	 * 
+	 *
 	 * @return The rotations of the gryo
 	 */
 	public Rotations getRotations() {
-		return new Rotations(this.getAngle() % 360, RotationUnits.DEGREE);
+		return new Rotations(getAngle() % 360, RotationUnits.DEGREE);
 	}
 }

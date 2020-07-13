@@ -1,13 +1,13 @@
 package com.robototes.subsystem;
 
 /**
- * 
+ *
  * @author Eli Orona
  *
  */
 public interface RobototesSubsystem {
 	/**
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -16,13 +16,13 @@ public interface RobototesSubsystem {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The type of subsystem
 	 */
 	public SubsystemType getSubsystemType();
 
 	/**
-	 * 
+	 *
 	 * @return The name of the subsystem
 	 */
 	public String getRobototesName();

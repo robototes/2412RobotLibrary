@@ -6,10 +6,10 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 
 /**
  * A simple motor subsystem
- * 
+ *
  * @author Eli Orona
- * 
- * 
+ *
+ *
  */
 public abstract class MotorSubsytem implements InOutSubsystem {
 
@@ -25,11 +25,11 @@ public abstract class MotorSubsytem implements InOutSubsystem {
 
 	public MotorSubsytem(SubsystemType type, String name, boolean inverted, double maxSpeed,
 			SpeedControllerGroup motors) {
-		this.m_type = type;
-		this.m_name = name;
-		this.m_inverted = inverted;
-		this.m_maxSpeed = maxSpeed;
-		this.m_motors = motors;
+		m_type = type;
+		m_name = name;
+		m_inverted = inverted;
+		m_maxSpeed = maxSpeed;
+		m_motors = motors;
 	}
 
 	public MotorSubsytem(SubsystemType m_type, String m_name, SpeedControllerGroup m_motors) {
@@ -100,7 +100,7 @@ public abstract class MotorSubsytem implements InOutSubsystem {
 
 	/**
 	 * Gets the motors of the subsytem
-	 * 
+	 *
 	 * @return The {@link SpeedControllerGroup} for the motors
 	 */
 	public SpeedControllerGroup getMotors() {

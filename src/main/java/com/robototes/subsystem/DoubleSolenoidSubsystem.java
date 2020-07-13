@@ -46,7 +46,7 @@ public abstract class DoubleSolenoidSubsystem extends SubsystemBase implements O
 
 	@Override
 	public void invert(boolean inverted) {
-		this.m_inverted = inverted;
+		m_inverted = inverted;
 	}
 
 	@Override
@@ -56,11 +56,11 @@ public abstract class DoubleSolenoidSubsystem extends SubsystemBase implements O
 
 	/**
 	 * Gets the double solenoid of the subsystem
-	 * 
+	 *
 	 * @return The double solenoid
 	 */
 	public DoubleSolenoid getDoubleSolenoid() {
-		return this.m_doubleSolenoid;
+		return m_doubleSolenoid;
 	}
 
 }

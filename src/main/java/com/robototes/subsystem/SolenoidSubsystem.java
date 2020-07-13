@@ -45,7 +45,7 @@ public abstract class SolenoidSubsystem extends SubsystemBase implements OnOffSu
 
 	@Override
 	public void invert(boolean inverted) {
-		this.m_inverted = inverted;
+		m_inverted = inverted;
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public abstract class SolenoidSubsystem extends SubsystemBase implements OnOffSu
 
 	/**
 	 * Gets the solenoid of the subsystem
-	 * 
+	 *
 	 * @return The solenoid
 	 */
 	public Solenoid getSolenoid() {

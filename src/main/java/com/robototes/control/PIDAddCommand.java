@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * A Command Class that allows for easier use of PIDSubsystems, this command
  * uses the .addReference() method of PIDSubsystem
- * 
+ *
  * @author Eli Orona
  *
  * @param <T> Unit of the Subsystem

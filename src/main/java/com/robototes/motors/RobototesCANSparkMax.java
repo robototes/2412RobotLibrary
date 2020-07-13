@@ -13,7 +13,7 @@ import com.revrobotics.EncoderType;
 
 /**
  * Note: This is to be used for testing only, and the class cannot be mocked
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -48,7 +48,7 @@ public class RobototesCANSparkMax extends CANSparkMax {
 	@Override
 	public void setVoltage(double outputVolts) {
 		if (isInSim) {
-			this.voltage = outputVolts;
+			voltage = outputVolts;
 			return;
 		}
 		super.setVoltage(outputVolts);
@@ -57,7 +57,7 @@ public class RobototesCANSparkMax extends CANSparkMax {
 	@Override
 	public double get() {
 		if (isInSim) {
-			return this.speed;
+			return speed;
 		}
 		return super.get();
 	}
