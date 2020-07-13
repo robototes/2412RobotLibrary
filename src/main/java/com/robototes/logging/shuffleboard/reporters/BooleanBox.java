@@ -20,7 +20,7 @@ public class BooleanBox extends BooleanReporter<BooleanBox> {
 	}
 
 	public BooleanBox withColors(String falseColor, String trueColor) {
-		return this.withProperties(Map.of("colorWhenFalse", falseColor, "colorWhenTrue", trueColor));
+		return withProperties(Map.of("colorWhenFalse", falseColor, "colorWhenTrue", trueColor));
 	}
 
 }
