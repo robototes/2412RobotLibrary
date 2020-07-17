@@ -28,14 +28,12 @@ public abstract class BooleanConfig<S extends BooleanConfig<S>> extends Abstract
 
 	@Override
 	public void update() {
-		boolean value = entry.getBoolean(false);
+		boolean value = entry.getBoolean(oldValue);
 
 		if (value == oldValue) { // If shuffleboard has not changed
-			if (value == oldValue) { // If value is the old set value
-				boolean newValue = getter.get();
-				entry.setBoolean(newValue);
-				oldValue = newValue;
-			}
+			boolean newValue = getter.get();
+			entry.setBoolean(newValue);
+			oldValue = newValue;
 		} else {
 			setter.accept(value);
 			oldValue = value;
