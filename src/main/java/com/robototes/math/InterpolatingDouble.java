@@ -68,4 +68,8 @@ public class InterpolatingDouble implements Interpolable<InterpolatingDouble>, I
 	public InterpolatingDouble subtract(InterpolatingDouble other) {
 		return new InterpolatingDouble(value - other.value);
 	}
+
+	public Double value() {
+		return this.value;
+	}
 }
