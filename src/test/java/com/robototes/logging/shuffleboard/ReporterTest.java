@@ -45,17 +45,18 @@ public abstract class ReporterTest<T extends IReporter<?, T>> {
 
 	@Test
 	public void testGetName() {
-		assertEquals("Reporter " + name + " has correct name", name, reporter.getName());
+		assertEquals("Reporter " + reporter.getType().getWidgetName() + " has correct name", name, reporter.getName());
 	}
 
 	@Test
 	public void testGetTabName() {
-		assertEquals("Reporter " + name + " has correct tab name", tabName, reporter.getTabName());
+		assertEquals("Reporter " + reporter.getType().getWidgetName() + " has correct tab name", tabName,
+				reporter.getTabName());
 	}
 
 	@Test
 	public void testHasBeenBuilt() {
-		assertTrue("Reporter " + name + " has been build", reporter.hasBeenBuilt());
+		assertTrue("Reporter " + reporter.getType().getWidgetName() + " has been build", reporter.hasBeenBuilt());
 	}
 
 	@Test

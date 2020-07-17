@@ -1,7 +1,6 @@
 package com.robototes.logging.shuffleboard;
 
 import java.util.Map;
-import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
 import edu.wpi.first.networktables.NetworkTableEntry;
@@ -33,10 +32,11 @@ public abstract class AbstractReporter<T, S extends IReporter<T, S>> implements 
 			widget = (SuppliedValueWidget<T>) Shuffleboard.getTab(tabName).addString(name, (Supplier<String>) getter)
 					.withWidget(getType());
 		} else if (getter.get() instanceof Double) {
-			widget = (SuppliedValueWidget<T>) Shuffleboard.getTab(tabName).addNumber(name, () -> (double) getter.get()).withWidget(getType());
-		} else if (getter.get() instanceof Boolean) {
-			widget = (SuppliedValueWidget<T>) Shuffleboard.getTab(tabName).addBoolean(name, (BooleanSupplier) getter)
+			widget = (SuppliedValueWidget<T>) Shuffleboard.getTab(tabName).addNumber(name, () -> (double) getter.get())
 					.withWidget(getType());
+		} else if (getter.get() instanceof Boolean) {
+			widget = (SuppliedValueWidget<T>) Shuffleboard.getTab(tabName)
+					.addBoolean(name, () -> (boolean) getter.get()).withWidget(getType());
 		} else {
 			throw new IllegalArgumentException("Type " + getter.get().getClass().getSimpleName() + " is not supported");
 		}
@@ -79,6 +79,7 @@ public abstract class AbstractReporter<T, S extends IReporter<T, S>> implements 
 		entry = NetworkTableInstance.getDefault().getTable(Shuffleboard.kBaseTableName).getSubTable(tabName)
 				.getEntry(name);
 		entry.forceSetValue(getter.get());
+		widget.withProperties(allProperties);
 		oldValue = getter.get();
 	}
 

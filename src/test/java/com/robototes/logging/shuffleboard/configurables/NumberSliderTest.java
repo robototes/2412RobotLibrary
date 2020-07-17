@@ -2,7 +2,7 @@ package com.robototes.logging.shuffleboard.configurables;
 
 import static org.junit.Assert.assertEquals;
 
-import com.robototes.logging.shuffleboard.DoubleField;
+import com.robototes.logging.shuffleboard.ShuffleboardFieldTest;
 import com.robototes.logging.shuffleboard.ReporterTest;
 import com.robototes.logging.shuffleboard.ShuffleBoardManager;
 import com.robototes.math.MathUtils;
@@ -14,7 +14,7 @@ public class NumberSliderTest extends ReporterTest<NumberSlider> {
 	private static final String TAB_NAME = "Test Tab";
 	private static final String NAME = "Test Slider";
 
-	DoubleField field = new DoubleField();
+	ShuffleboardFieldTest<Double> field = new ShuffleboardFieldTest<Double>(0d);
 
 	public NumberSliderTest() {
 		super(NAME, TAB_NAME, BuiltInWidgets.kNumberSlider);

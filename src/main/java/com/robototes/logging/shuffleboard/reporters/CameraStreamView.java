@@ -1,7 +1,6 @@
 package com.robototes.logging.shuffleboard.reporters;
 
 import java.util.Map;
-import java.util.function.Supplier;
 
 import com.robototes.logging.shuffleboard.AbstractReporter;
 
@@ -11,8 +10,8 @@ import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
 
 public class CameraStreamView extends AbstractReporter<VideoSource, CameraStreamView> {
 
-	public CameraStreamView(Supplier<VideoSource> getter, String name, String tabName) {
-		super(getter, name, tabName);
+	public CameraStreamView(VideoSource video, String name, String tabName) {
+		super(() -> video, name, tabName);
 	}
 
 	@Override

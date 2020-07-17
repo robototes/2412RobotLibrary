@@ -2,7 +2,7 @@ package com.robototes.logging.shuffleboard.reporters.number;
 
 import static org.junit.Assert.assertEquals;
 
-import com.robototes.logging.shuffleboard.DoubleField;
+import com.robototes.logging.shuffleboard.ShuffleboardFieldTest;
 import com.robototes.logging.shuffleboard.ReporterTest;
 import com.robototes.logging.shuffleboard.reporters.abst.NumberReporter;
 import com.robototes.math.MathUtils;
@@ -15,14 +15,14 @@ public abstract class NumberTest<T extends NumberReporter<T>> extends ReporterTe
 		super(name, tabName, type);
 	}
 
-	protected DoubleField field = new DoubleField();
+	protected ShuffleboardFieldTest<Double> field = new ShuffleboardFieldTest<Double>(0d);
 
 	@Override
 	public void testUpdate() {
 		double number = -1;
 		field.setValue(number);
 		reporter.update();
-		assertEquals("Number Bar set correct shuffleboard value", number,
+		assertEquals("Number " + reporter.getType().getWidgetName() + " set correct shuffleboard value", number,
 				(Double) reporter.getEntry().getNumber(Double.NaN), MathUtils.EPSILON);
 	}
 

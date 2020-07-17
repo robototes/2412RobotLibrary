@@ -1,7 +1,6 @@
 package com.robototes.logging.shuffleboard.reporters.hardware.drives;
 
 import java.util.Map;
-import java.util.function.Supplier;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
@@ -9,8 +8,8 @@ import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
 
 public class DifferentialDriveReporter extends RobotDriveReporter<DifferentialDrive, DifferentialDriveReporter> {
 
-	public DifferentialDriveReporter(Supplier<DifferentialDrive> getter, String name, String tabName) {
-		super(getter, name, tabName);
+	public DifferentialDriveReporter(DifferentialDrive drive, String name, String tabName) {
+		super(() -> drive, name, tabName);
 	}
 
 	public DifferentialDriveReporter withWheels(int wheels) {
