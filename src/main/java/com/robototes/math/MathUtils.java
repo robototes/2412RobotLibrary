@@ -8,7 +8,7 @@ import static java.lang.Math.sqrt;
 
 /**
  * A bunch of helpful math utilities for programming a robot
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -17,13 +17,13 @@ public class MathUtils {
 	/**
 	 * A class that can compute complex functions on a single value. Similar to
 	 * {@link Equation}, but can trig and non whole powers
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
 	public static interface MathFunction {
 		/**
-		 * 
+		 *
 		 * @param x Input
 		 * @return Output
 		 */
@@ -36,7 +36,7 @@ public class MathUtils {
 
 	/**
 	 * Constrains a value between two other values
-	 * 
+	 *
 	 * @param value    Value to be constrained
 	 * @param minValue minimun value allowed
 	 * @param maxValue maximun value allowed
@@ -48,7 +48,7 @@ public class MathUtils {
 
 	/**
 	 * Cubes a value
-	 * 
+	 *
 	 * @param value Value to be cubed
 	 * @return Cubed value
 	 */
@@ -58,7 +58,7 @@ public class MathUtils {
 
 	/**
 	 * Cubes an array of values
-	 * 
+	 *
 	 * @param values list of values to cube
 	 * @return list of cubed values
 	 */
@@ -68,7 +68,7 @@ public class MathUtils {
 
 	/**
 	 * Calclates the distance from the origin in any number of dimensions
-	 * 
+	 *
 	 * @param values List of values
 	 * @return The distance from the origin
 	 */
@@ -85,7 +85,7 @@ public class MathUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param value          The value to map
 	 * @param minInputValue  Lower bound of the input range
 	 * @param maxInputValue  Upper bound of the input range
@@ -104,7 +104,7 @@ public class MathUtils {
 	/**
 	 * Runs a MathFunction on a list of values, allowing for easier ways to
 	 * manipulate many values
-	 * 
+	 *
 	 * @param input    The list of values
 	 * @param function The function to compute with the values
 	 * @return The outputs of the function

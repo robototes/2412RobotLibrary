@@ -5,14 +5,14 @@ import edu.wpi.first.networktables.NetworkTable;
 /**
  * A wrapper class for the limelight system. This will be updated as more
  * features are needed
- * 
+ *
  * @author Eli Orona
  *
  */
 public class Limelight {
 	/**
 	 * The different LED modes of the limelight
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -32,7 +32,7 @@ public class Limelight {
 
 	/**
 	 * The different camera modes of the limelight
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -52,7 +52,7 @@ public class Limelight {
 
 	/**
 	 * The different pipelines of the limelight
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -72,7 +72,7 @@ public class Limelight {
 
 	/**
 	 * The different streaming modes of the limelight
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -92,7 +92,7 @@ public class Limelight {
 
 	/**
 	 * The different snapshot modes of the limelight
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -137,6 +137,10 @@ public class Limelight {
 
 	public double getTX() {
 		return networkTable.getEntry("tx").getDouble(Double.NaN);
+	}
+
+	public double getTS() {
+		return networkTable.getEntry("ts").getDouble(Double.NaN);
 	}
 
 	public LEDMode getLedMode() {

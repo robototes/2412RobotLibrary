@@ -2,7 +2,7 @@ package com.robototes.subsystem;
 
 /**
  * A simple subsystem that can be turned on and off
- * 
+ *
  * @author Eli Orona
  *
  */

@@ -7,7 +7,7 @@ import com.robototes.units.UnitTypes.RotationUnits;
 
 /**
  * A subsystem that rotates with PID Control.
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -20,7 +20,7 @@ public class RotationSubsystem implements PIDSubsystem<Rotations> {
 
 	RotationSubsystem(PIDMotorController<?>[] motors, InterUnitRatio<RotationUnits, RotationUnits> ratio) {
 		this.motors = motors;
-		this.rotationsToDistance = ratio;
+		rotationsToDistance = ratio;
 	}
 
 	@Override

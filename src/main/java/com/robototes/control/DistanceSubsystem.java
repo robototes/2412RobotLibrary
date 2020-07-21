@@ -10,7 +10,7 @@ import com.robototes.units.UnitTypes.RotationUnits;
 
 /**
  * A subsystem with PID control for distance
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -24,7 +24,7 @@ public class DistanceSubsystem implements PIDSubsystem<Distance> {
 	public DistanceSubsystem(PIDMotorController<?>[] motors,
 			InterUnitRatio<UnitTypes.RotationUnits, UnitTypes.DistanceUnits> ratio) {
 		this.motors = motors;
-		this.rotationsToDistance = ratio;
+		rotationsToDistance = ratio;
 	}
 
 	@Override

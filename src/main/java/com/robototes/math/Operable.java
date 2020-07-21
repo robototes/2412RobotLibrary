@@ -3,7 +3,7 @@ package com.robototes.math;
 /**
  * An interface that allows for the implementer to have add, subtract, multiply,
  * and divide methods
- * 
+ *
  * @author Eli Orona
  *
  * @param <T> The type to run operations on
@@ -12,7 +12,7 @@ public interface Operable<T> {
 
 	/**
 	 * Adds two values
-	 * 
+	 *
 	 * @param other Other value
 	 * @return Added value
 	 */
@@ -20,7 +20,7 @@ public interface Operable<T> {
 
 	/**
 	 * Divides two values
-	 * 
+	 *
 	 * @param other Other value
 	 * @return Divided value
 	 */
@@ -28,7 +28,7 @@ public interface Operable<T> {
 
 	/**
 	 * Multiplies two values
-	 * 
+	 *
 	 * @param other Other value
 	 * @return Multiplied value
 	 */
@@ -36,7 +36,7 @@ public interface Operable<T> {
 
 	/**
 	 * Subtracts two values
-	 * 
+	 *
 	 * @param other Other value
 	 * @return Subtracted value
 	 */

@@ -20,7 +20,7 @@ public final class SchedulerPumpHelper {
 
 	/**
 	 * Change the default heartbeat for the scheduler pump.
-	 * 
+	 *
 	 * @param defaultHeartbeatInMs Heartbeat in milliseconds
 	 */
 	public static void setDefaultHeartbeat(int defaultHeartbeatInMs) {
@@ -29,7 +29,7 @@ public final class SchedulerPumpHelper {
 
 	/**
 	 * Helper to figure out what heartbeat to use.
-	 * 
+	 *
 	 * @param optionalHeartbeatInMs Optional heartbeat in array form to simulate
 	 *                              optional parameters
 	 * @return The heartbeat to use
@@ -47,7 +47,7 @@ public final class SchedulerPumpHelper {
 	 * of deadlocks. As of this writing, parallel testing is NOT the default mode
 	 * for JUnit. So if you have not decorated your tests to run in parallel, you
 	 * are fine.
-	 * 
+	 *
 	 * @param durationInMs          Duration to run in milliseconds
 	 * @param optionalHeartbeatInMs Optional pump time in milliseconds. If omitted,
 	 *                              20ms default unless changed.
@@ -57,7 +57,7 @@ public final class SchedulerPumpHelper {
 			throws InterruptedException {
 		int heartbeatToUseInMs = getHeartbeatToUse(optionalHeartbeatInMs);
 		long start = System.nanoTime();
-		while (System.nanoTime() < (start + TimeUnit.MILLISECONDS.toNanos(durationInMs))) {
+		while (System.nanoTime() < start + TimeUnit.MILLISECONDS.toNanos(durationInMs)) {
 			Scheduler.getInstance().run();
 			Thread.sleep(heartbeatToUseInMs);
 		}

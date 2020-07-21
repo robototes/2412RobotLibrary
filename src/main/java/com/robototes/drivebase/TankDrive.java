@@ -169,7 +169,7 @@ public class TankDrive implements IDrivebase {
 
 	@Override
 	public void useAnglePID() {
-		if (this.mode == ControlMode.ROTATION) {
+		if (mode == ControlMode.ROTATION) {
 			return;
 		}
 		double input = rotationSetPostition.subtract(getHeading()).getValue();
@@ -182,7 +182,7 @@ public class TankDrive implements IDrivebase {
 
 	@Override
 	public void useDistancePID() {
-		if (this.mode != ControlMode.DISTANCE) {
+		if (mode != ControlMode.DISTANCE) {
 			return;
 		}
 		left.usePID();

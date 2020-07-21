@@ -1,73 +1,55 @@
 package com.robototes.logging.shuffleboard.reporters;
 
 import java.util.Map;
-import java.util.function.Supplier;
 
-import com.robototes.logging.shuffleboard.IReporter;
+import com.robototes.logging.shuffleboard.AbstractReporter;
 
 import edu.wpi.cscore.VideoSource;
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
 
-public class CameraStreamView implements IReporter<VideoSource, CameraStreamView> {
+public class CameraStreamView extends AbstractReporter<VideoSource, CameraStreamView> {
 
-	@Override
-	public WidgetType getType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Supplier<VideoSource> getReporter() {
-		// TODO Auto-generated method stub
-		return null;
+	public CameraStreamView(VideoSource video, String name, String tabName) {
+		super(() -> video, name, tabName);
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+	}
 
+	public CameraStreamView withRotation(Rotation rotation) {
+		return withProperties(Map.of("rotation", rotation.getValue()));
+	}
+
+	public CameraStreamView showControls(boolean show) {
+		return withProperties(Map.of("showControls", show));
+	}
+
+	public CameraStreamView showCrosshair(Boolean show) {
+		return withProperties(Map.of("showCrosshair", show));
+	}
+
+	public CameraStreamView crosshairColor(String color) {
+		return withProperties(Map.of("crosshairColor", color));
 	}
 
 	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+	public WidgetType getType() {
+		return BuiltInWidgets.kCameraStream;
 	}
 
-	@Override
-	public String getTabName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public static enum Rotation {
+		NONE("NONE"), QUARTER_CLOCK_WISE("QUARTER_CW"), QUARTER_COUNTER_CLOCK_WISE("QUARTER_CCW"), HALF("HALF");
 
-	@Override
-	public CameraStreamView withSize(int width, int height) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		private final String value;
 
-	@Override
-	public CameraStreamView withPosition(int columnIndex, int rowIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		private Rotation(String value) {
+			this.value = value;
+		}
 
-	@Override
-	public CameraStreamView withProperties(Map<String, Object> properties) {
-		// TODO Auto-generated method stub
-		return null;
+		public String getValue() {
+			return value;
+		}
 	}
-
-	@Override
-	public CameraStreamView build() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean hasBeenBuilt() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

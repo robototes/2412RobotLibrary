@@ -1,73 +1,24 @@
 package com.robototes.logging.shuffleboard.reporters.hardware;
 
-import java.util.Map;
-import java.util.function.Supplier;
-
-import com.robototes.logging.shuffleboard.IReporter;
+import com.robototes.logging.shuffleboard.AbstractReporter;
 
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
 
-public class SpeedControllerReporter implements IReporter<SpeedController, SpeedControllerReporter> {
+public class SpeedControllerReporter extends AbstractReporter<SpeedController, SpeedControllerReporter> {
+
+	public SpeedControllerReporter(SpeedController controller, String name, String tabName) {
+		super(() -> controller, name, tabName);
+	}
 
 	@Override
 	public WidgetType getType() {
-		// TODO Auto-generated method stub
-		return null;
+		return BuiltInWidgets.kSpeedController;
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getTabName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public SpeedControllerReporter withSize(int width, int height) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public SpeedControllerReporter withPosition(int columnIndex, int rowIndex) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public SpeedControllerReporter withProperties(Map<String, Object> properties) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public SpeedControllerReporter build() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean hasBeenBuilt() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Supplier<SpeedController> getReporter() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
