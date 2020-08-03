@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 public interface IDrivebase {
 
 	public enum ControlMode {
-		VECTOR, NONE, MANUAL, ROTATION, DISTANCE
+		DISTANCE, MANUAL, NONE, ROTATION, VECTOR
 	}
 
 	public void addAngle(Rotations rotation);

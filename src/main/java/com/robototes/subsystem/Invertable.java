@@ -15,13 +15,6 @@ public interface Invertable {
 	public void invert(boolean inverted);
 
 	/**
-	 * Gets the current inversion state of the type
-	 *
-	 * @return True if inverted, false if not
-	 */
-	public boolean isInverted();
-
-	/**
 	 * Inverts a boolean based on the current inversion of the type
 	 *
 	 * @param input The boolean to invert
@@ -60,4 +53,11 @@ public interface Invertable {
 		}
 		return primary;
 	}
+
+	/**
+	 * Gets the current inversion state of the type
+	 *
+	 * @return True if inverted, false if not
+	 */
+	public boolean isInverted();
 }

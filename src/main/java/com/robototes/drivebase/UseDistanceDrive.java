@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 @Deprecated
 public class UseDistanceDrive<T extends IDrivebase> extends Command {
 
-	T drivebase;
 	Distance distance;
-	Distance originalDistance;
+	T drivebase;
 	double howCloseToStop;
+	Distance originalDistance;
 
 	public UseDistanceDrive(T drivebase, Distance addDistance, double howCloseToStop) {
 		this.drivebase = drivebase;

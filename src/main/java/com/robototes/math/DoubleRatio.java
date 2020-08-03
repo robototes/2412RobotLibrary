@@ -10,14 +10,14 @@ import com.robototes.utils.StringUtils;
 public class DoubleRatio implements Ratio<Double> {
 
 	/**
-	 * Ratio between the two sides
-	 */
-	public double ratio;
-
-	/**
 	 * label for the from type
 	 */
 	public String from;
+
+	/**
+	 * Ratio between the two sides
+	 */
+	public double ratio;
 
 	/**
 	 * label for the to type

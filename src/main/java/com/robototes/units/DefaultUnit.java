@@ -6,8 +6,8 @@ import com.robototes.utils.StringUtils;
 
 public class DefaultUnit implements IUnit<DefaultUnit> {
 
-	public double value;
 	public String unit;
+	public double value;
 
 	public DefaultUnit(double value, String unit) {
 		this.value = value;

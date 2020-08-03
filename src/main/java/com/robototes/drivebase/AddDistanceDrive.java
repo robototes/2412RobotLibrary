@@ -7,8 +7,8 @@ import edu.wpi.first.wpilibj.command.Command;
 @Deprecated
 public class AddDistanceDrive<T extends IDrivebase> extends Command {
 
-	T drivebase;
 	Distance distance;
+	T drivebase;
 
 	public AddDistanceDrive(T drivebase, Distance addDistance) {
 		this.drivebase = drivebase;

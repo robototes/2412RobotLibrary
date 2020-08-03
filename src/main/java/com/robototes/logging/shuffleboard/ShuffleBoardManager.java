@@ -10,6 +10,10 @@ import java.util.List;
  *
  */
 public class ShuffleBoardManager {
+
+	/**
+	 * The main instance
+	 */
 	private static ShuffleBoardManager instance;
 
 	/**
@@ -24,12 +28,34 @@ public class ShuffleBoardManager {
 		return instance;
 	}
 
-	private List<IReporter<?, ?>> reporters;
-
+	/**
+	 * The iteration of the loop
+	 */
 	private int loopIteration;
 
+	/**
+	 * The Reporters
+	 */
+	private List<IReporter<?, ?>> reporters;
+
+	/**
+	 * No public instances for you
+	 */
 	private ShuffleBoardManager() {
 		reporters = new ArrayList<>();
+	}
+
+	/**
+	 * Adds a widget
+	 *
+	 * @param iReporter
+	 */
+	public void add(IReporter<?, ?> iReporter) {
+		reporters.add(iReporter);
+	}
+
+	public void reset() {
+		reporters.clear();
 	}
 
 	/**
@@ -50,18 +76,5 @@ public class ShuffleBoardManager {
 		if (loopIteration++ % loop == 0) {
 			update();
 		}
-	}
-
-	/**
-	 * Adds a widget
-	 *
-	 * @param iReporter
-	 */
-	public void add(IReporter<?, ?> iReporter) {
-		reporters.add(iReporter);
-	}
-
-	public void reset() {
-		reporters.clear();
 	}
 }

@@ -39,25 +39,6 @@ public class Equation {
 		return y;
 	}
 
-	/**
-	 *
-	 * @return The terms of the equation going from x^0 to x^n
-	 */
-	public double[] getTerms() {
-		return terms;
-	}
-
-	@Override
-	public String toString() {
-		String equation = "";
-		int i = 0;
-		for (double term : terms) {
-			equation = term + (i++ != 0 ? "x^" + (i - 1) + " + " : "") + equation;
-		}
-
-		return "y = " + equation;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (!(o instanceof Equation)) {
@@ -77,7 +58,26 @@ public class Equation {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return The terms of the equation going from x^0 to x^n
+	 */
+	public double[] getTerms() {
+		return terms;
+	}
+
 	public MathFunction toMathFunction() {
 		return x -> calculate(x);
+	}
+
+	@Override
+	public String toString() {
+		String equation = "";
+		int i = 0;
+		for (double term : terms) {
+			equation = term + (i++ != 0 ? "x^" + (i - 1) + " + " : "") + equation;
+		}
+
+		return "y = " + equation;
 	}
 }

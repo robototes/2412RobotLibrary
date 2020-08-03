@@ -15,11 +15,11 @@ public enum LogType {
 	 */
 	CRITICAL(4),
 	/**
-	 * LEVEL: 3 <br>
-	 * Saved for lower level warnings and updates, i.e. endgame activated, or auto
-	 * ended. could also include scoring.
+	 * LEVEL: 1 <br>
+	 * Saved for all motor updates, speed changes, button presses, and almost every
+	 * single action taken by the robot and drivers
 	 */
-	WARNING(3),
+	DEFAULT(1),
 	/**
 	 * LEVEL: 2 <br>
 	 * Saved for status updates of the robot, like commands being activated, and
@@ -27,17 +27,11 @@ public enum LogType {
 	 */
 	UPDATE(2),
 	/**
-	 * LEVEL: 1 <br>
-	 * Saved for all motor updates, speed changes, button presses, and almost every
-	 * single action taken by the robot and drivers
+	 * LEVEL: 3 <br>
+	 * Saved for lower level warnings and updates, i.e. endgame activated, or auto
+	 * ended. could also include scoring.
 	 */
-	DEFAULT(1);
-
-	private int m_logLevel;
-
-	private LogType(int logLevel) {
-		m_logLevel = logLevel;
-	}
+	WARNING(3);
 
 	/**
 	 * Gets the LogType from an integer
@@ -57,6 +51,12 @@ public enum LogType {
 			default:
 				return DEFAULT;
 		}
+	}
+
+	private int m_logLevel;
+
+	private LogType(int logLevel) {
+		m_logLevel = logLevel;
 	}
 
 	/**

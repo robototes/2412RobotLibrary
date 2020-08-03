@@ -27,21 +27,6 @@ public abstract class NumberConfig<S extends NumberConfig<S>> extends AbstractVa
 		super(getter, setter, name, tabName);
 	}
 
-	/**
-	 * Sets the min and max of the widget
-	 *
-	 * @param min min
-	 * @param max max
-	 * @return this
-	 */
-	public S withMinMax(int min, int max) {
-		if (min > max) {
-			throw new IllegalArgumentException("min, " + min + ", is greater than max, " + max + "!");
-		}
-
-		return withProperties(Map.of("min", min, "max", max));
-	}
-
 	@Override
 	public void update() {
 		double value = entry.getDouble(Double.NaN);
@@ -56,6 +41,21 @@ public abstract class NumberConfig<S extends NumberConfig<S>> extends AbstractVa
 			setter.accept(value);
 			oldValue = value;
 		}
+	}
+
+	/**
+	 * Sets the min and max of the widget
+	 *
+	 * @param min min
+	 * @param max max
+	 * @return this
+	 */
+	public S withMinMax(int min, int max) {
+		if (min > max) {
+			throw new IllegalArgumentException("min, " + min + ", is greater than max, " + max + "!");
+		}
+
+		return withProperties(Map.of("min", min, "max", max));
 	}
 
 }

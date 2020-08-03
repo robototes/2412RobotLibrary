@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class UseRotationDrive<T extends IDrivebase> extends Command {
 
 	T drivebase;
-	Rotations rotations;
 	double howCloseToStop;
+	Rotations rotations;
 
 	public UseRotationDrive(T drivebase, Rotations setRotations, double howCloseToStop) {
 		this.drivebase = drivebase;

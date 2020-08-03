@@ -11,23 +11,23 @@ package com.robototes.PIDControls;
  */
 public class PIDConstants {
 	/**
-	 * The P value
+	 * The D value
 	 */
-	public double k_P = 0;
+	public double k_D = 0;
 	/**
 	 * The I value
 	 */
 	public double k_I = 0;
 
 	/**
-	 * The D value
-	 */
-	public double k_D = 0;
-
-	/**
 	 * The Integral Dampening value
 	 */
 	public double k_IDamp = 1;
+
+	/**
+	 * The P value
+	 */
+	public double k_P = 0;
 
 	/**
 	 * Creates a PIDConstants with just a P value

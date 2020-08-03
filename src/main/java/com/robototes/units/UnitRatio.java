@@ -15,14 +15,14 @@ import com.robototes.utils.StringUtils;
 public class UnitRatio<T extends IUnit<?>> implements Ratio<IUnit<?>> {
 
 	/**
-	 * The ratio between units
-	 */
-	public double ratio;
-
-	/**
 	 * the from unit
 	 */
 	public String from;
+
+	/**
+	 * The ratio between units
+	 */
+	public double ratio;
 
 	/**
 	 * the to unit

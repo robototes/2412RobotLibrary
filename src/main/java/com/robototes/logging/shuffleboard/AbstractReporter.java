@@ -9,22 +9,21 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardComponent;
-import edu.wpi.first.wpilibj.shuffleboard.SuppliedValueWidget;
 
 @SuppressWarnings("unchecked")
 public abstract class AbstractReporter<T, S extends IReporter<T, S>> implements IReporter<T, S> {
 
-	protected final Supplier<T> getter;
-	protected final String name;
-	protected final String tabName;
-
-	protected boolean built = false;
 	protected Map<String, Object> allProperties;
-	protected ShuffleboardComponent<?> widget;
-
+	protected boolean built = false;
 	protected NetworkTableEntry entry;
 
+	protected final Supplier<T> getter;
+	protected final String name;
 	protected T oldValue;
+
+	protected final String tabName;
+
+	protected ShuffleboardComponent<?> widget;
 
 	public AbstractReporter(Supplier<T> getter, String name, String tabName) {
 		this.getter = getter;

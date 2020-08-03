@@ -5,12 +5,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public abstract class SolenoidSubsystem extends SubsystemBase implements OnOffSubsystem {
 
-	protected final Solenoid m_solenoid;
+	protected boolean m_inverted = false;
 
 	protected final String m_name;
-	protected final SubsystemType m_type;
+	protected final Solenoid m_solenoid;
 
-	protected boolean m_inverted = false;
+	protected final SubsystemType m_type;
 
 	public SolenoidSubsystem(Solenoid solenoid, String name, SubsystemType type) {
 		m_name = name;
@@ -24,23 +24,22 @@ public abstract class SolenoidSubsystem extends SubsystemBase implements OnOffSu
 	}
 
 	@Override
-	public SubsystemType getSubsystemType() {
-		return m_type;
-	}
-
-	@Override
 	public String getRobototesName() {
 		return m_name;
 	}
 
-	@Override
-	public void on() {
-		m_solenoid.set(invertBoolean(true));
+	/**
+	 * Gets the solenoid of the subsystem
+	 *
+	 * @return The solenoid
+	 */
+	public Solenoid getSolenoid() {
+		return m_solenoid;
 	}
 
 	@Override
-	public void off() {
-		m_solenoid.set(invertBoolean(false));
+	public SubsystemType getSubsystemType() {
+		return m_type;
 	}
 
 	@Override
@@ -53,13 +52,14 @@ public abstract class SolenoidSubsystem extends SubsystemBase implements OnOffSu
 		return m_inverted;
 	}
 
-	/**
-	 * Gets the solenoid of the subsystem
-	 *
-	 * @return The solenoid
-	 */
-	public Solenoid getSolenoid() {
-		return m_solenoid;
+	@Override
+	public void off() {
+		m_solenoid.set(invertBoolean(false));
+	}
+
+	@Override
+	public void on() {
+		m_solenoid.set(invertBoolean(true));
 	}
 
 }

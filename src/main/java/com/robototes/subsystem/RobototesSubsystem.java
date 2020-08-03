@@ -12,18 +12,18 @@ public interface RobototesSubsystem {
 	 *
 	 */
 	public enum SubsystemType {
-		VISION, DRIVEBASE, INTAKE, LIFT, SHOOTER, TURRET, SHIFTER, CLIMB, ARM, OTHER;
+		ARM, CLIMB, DRIVEBASE, INTAKE, LIFT, OTHER, SHIFTER, SHOOTER, TURRET, VISION;
 	}
-
-	/**
-	 *
-	 * @return The type of subsystem
-	 */
-	public SubsystemType getSubsystemType();
 
 	/**
 	 *
 	 * @return The name of the subsystem
 	 */
 	public String getRobototesName();
+
+	/**
+	 *
+	 * @return The type of subsystem
+	 */
+	public SubsystemType getSubsystemType();
 }

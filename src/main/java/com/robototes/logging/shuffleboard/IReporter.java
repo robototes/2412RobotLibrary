@@ -15,21 +15,30 @@ import edu.wpi.first.wpilibj.shuffleboard.WidgetType;
  */
 public interface IReporter<T, S extends IReporter<T, S>> {
 	/**
+	 * Orientation for the widget
 	 *
-	 * @return The type of shuffleboard widget
+	 * @author Eli Orona
+	 *
 	 */
-	public WidgetType getType();
+	public enum Oritentation {
+		HORIZONTAL, VERTICLE
+	}
 
 	/**
+	 * Builds and initializes the widget
 	 *
-	 * @return The supplier of the data for the widget
+	 * @return this
 	 */
-	public Supplier<T> getReporter();
+	public S build();
 
 	/**
-	 * Update the widget
+	 * Throws an exception if the widget is already built
 	 */
-	public void update();
+	default void checkNotBuilt() {
+		if (hasBeenBuilt()) {
+			throw new UnsupportedOperationException("Object has been built already");
+		}
+	}
 
 	/**
 	 *
@@ -39,18 +48,31 @@ public interface IReporter<T, S extends IReporter<T, S>> {
 
 	/**
 	 *
+	 * @return The supplier of the data for the widget
+	 */
+	public Supplier<T> getReporter();
+
+	/**
+	 *
 	 * @return The tab name of the widget
 	 */
 	public String getTabName();
 
 	/**
-	 * Sets the size of the widget
 	 *
-	 * @param width
-	 * @param height
-	 * @return this
+	 * @return The type of shuffleboard widget
 	 */
-	public S withSize(int width, int height);
+	public WidgetType getType();
+
+	/**
+	 * @return Whether or not the reporter has been built
+	 */
+	public boolean hasBeenBuilt();
+
+	/**
+	 * Update the widget
+	 */
+	public void update();
 
 	/**
 	 * Sets the position of the widget
@@ -70,21 +92,11 @@ public interface IReporter<T, S extends IReporter<T, S>> {
 	public S withProperties(Map<String, Object> properties);
 
 	/**
-	 * Builds and initializes the widget
+	 * Sets the size of the widget
 	 *
+	 * @param width
+	 * @param height
 	 * @return this
 	 */
-	public S build();
-
-	/**
-	 * Throws an exception if the widget is already built
-	 */
-	default void checkNotBuilt() {
-		if (hasBeenBuilt()) {
-			throw new UnsupportedOperationException("Object has been built already");
-		}
-	}
-
-	public boolean hasBeenBuilt();
-
+	public S withSize(int width, int height);
 }

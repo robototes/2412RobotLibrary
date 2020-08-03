@@ -8,10 +8,10 @@ public abstract class DoubleSolenoidSubsystem extends SubsystemBase implements O
 
 	protected final DoubleSolenoid m_doubleSolenoid;
 
-	protected final String m_name;
-	protected final SubsystemType m_type;
-
 	protected boolean m_inverted = false;
+	protected final String m_name;
+
+	protected final SubsystemType m_type;
 
 	public DoubleSolenoidSubsystem(DoubleSolenoid solenoid, String name, SubsystemType type) {
 		m_name = name;
@@ -24,9 +24,13 @@ public abstract class DoubleSolenoidSubsystem extends SubsystemBase implements O
 		m_inverted = invertedOnStart;
 	}
 
-	@Override
-	public SubsystemType getSubsystemType() {
-		return m_type;
+	/**
+	 * Gets the double solenoid of the subsystem
+	 *
+	 * @return The double solenoid
+	 */
+	public DoubleSolenoid getDoubleSolenoid() {
+		return m_doubleSolenoid;
 	}
 
 	@Override
@@ -35,13 +39,8 @@ public abstract class DoubleSolenoidSubsystem extends SubsystemBase implements O
 	}
 
 	@Override
-	public void on() {
-		m_doubleSolenoid.set(invertGeneric(Value.kForward, Value.kReverse));
-	}
-
-	@Override
-	public void off() {
-		m_doubleSolenoid.set(invertGeneric(Value.kReverse, Value.kForward));
+	public SubsystemType getSubsystemType() {
+		return m_type;
 	}
 
 	@Override
@@ -54,13 +53,14 @@ public abstract class DoubleSolenoidSubsystem extends SubsystemBase implements O
 		return m_inverted;
 	}
 
-	/**
-	 * Gets the double solenoid of the subsystem
-	 *
-	 * @return The double solenoid
-	 */
-	public DoubleSolenoid getDoubleSolenoid() {
-		return m_doubleSolenoid;
+	@Override
+	public void off() {
+		m_doubleSolenoid.set(invertGeneric(Value.kReverse, Value.kForward));
+	}
+
+	@Override
+	public void on() {
+		m_doubleSolenoid.set(invertGeneric(Value.kForward, Value.kReverse));
 	}
 
 }

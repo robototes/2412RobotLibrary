@@ -14,8 +14,8 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 @Deprecated
 public class PIDAddCommand<T extends IUnit<T>> extends Command {
-	private PIDSubsystem<T> PIDSubsystem;
 	private T addPositionUnit;
+	private PIDSubsystem<T> PIDSubsystem;
 
 	public PIDAddCommand(PIDSubsystem<T> PIDSubsystem, T addPositionUnit) {
 		this.PIDSubsystem = PIDSubsystem;

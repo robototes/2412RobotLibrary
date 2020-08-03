@@ -4,6 +4,13 @@ import java.util.function.Supplier;
 
 import com.robototes.logging.shuffleboard.AbstractReporter;
 
+/**
+ * A basic boolean impl for widgets
+ *
+ * @author Eli Orona
+ *
+ * @param <S> Self
+ */
 public abstract class BooleanReporter<S extends BooleanReporter<S>> extends AbstractReporter<Boolean, S> {
 
 	public BooleanReporter(Supplier<Boolean> getter, String name, String tabName) {

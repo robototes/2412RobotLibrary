@@ -13,15 +13,15 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
  */
 public abstract class MotorSubsytem implements InOutSubsystem {
 
-	protected final SubsystemType m_type;
-	protected final String m_name;
-
+	protected double m_currentSpeed = 0;
 	protected boolean m_inverted = false;
 
 	protected double m_maxSpeed = 1;
-	protected double m_currentSpeed = 0;
 
 	protected final SpeedControllerGroup m_motors;
+	protected final String m_name;
+
+	protected final SubsystemType m_type;
 
 	public MotorSubsytem(SubsystemType type, String name, boolean inverted, double maxSpeed,
 			SpeedControllerGroup motors) {
@@ -39,13 +39,38 @@ public abstract class MotorSubsytem implements InOutSubsystem {
 	}
 
 	@Override
-	public SubsystemType getSubsystemType() {
-		return m_type;
+	public double getMaxSpeed() {
+		return m_maxSpeed;
+	}
+
+	/**
+	 * Gets the motors of the subsytem
+	 *
+	 * @return The {@link SpeedControllerGroup} for the motors
+	 */
+	public SpeedControllerGroup getMotors() {
+		return m_motors;
 	}
 
 	@Override
 	public String getRobototesName() {
 		return m_name;
+	}
+
+	@Override
+	public double getSpeed() {
+		return m_currentSpeed;
+	}
+
+	@Override
+	public SubsystemType getSubsystemType() {
+		return m_type;
+	}
+
+	@Override
+	public void in() {
+		m_motors.set(invertDouble(m_maxSpeed));
+		m_currentSpeed = m_maxSpeed;
 	}
 
 	@Override
@@ -59,21 +84,9 @@ public abstract class MotorSubsytem implements InOutSubsystem {
 	}
 
 	@Override
-	public void in() {
-		m_motors.set(invertDouble(m_maxSpeed));
-		m_currentSpeed = m_maxSpeed;
-	}
-
-	@Override
 	public void out() {
 		m_motors.set(invertDouble(-m_maxSpeed));
 		m_currentSpeed = -m_maxSpeed;
-	}
-
-	@Override
-	public void stop() {
-		m_motors.set(0);
-		m_currentSpeed = 0;
 	}
 
 	@Override
@@ -89,22 +102,9 @@ public abstract class MotorSubsytem implements InOutSubsystem {
 	}
 
 	@Override
-	public double getMaxSpeed() {
-		return m_maxSpeed;
-	}
-
-	@Override
-	public double getSpeed() {
-		return m_currentSpeed;
-	}
-
-	/**
-	 * Gets the motors of the subsytem
-	 *
-	 * @return The {@link SpeedControllerGroup} for the motors
-	 */
-	public SpeedControllerGroup getMotors() {
-		return m_motors;
+	public void stop() {
+		m_motors.set(0);
+		m_currentSpeed = 0;
 	}
 
 }

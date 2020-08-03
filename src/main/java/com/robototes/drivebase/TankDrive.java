@@ -22,15 +22,15 @@ import edu.wpi.first.wpilibj.Joystick;
 @Deprecated
 public class TankDrive implements IDrivebase {
 
+	Gyro gyro;
 	DistanceSubsystem left;
-	DistanceSubsystem right;
-	PIDMotorController<?>[] motors;
-
 	ControlMode mode;
 
+	PIDMotorController<?>[] motors;
+
+	DistanceSubsystem right;
 	PIDController rotationPIDController;
 	Rotations rotationSetPostition;
-	Gyro gyro;
 
 	public TankDrive(PIDMotorController<?>[] leftMotors, PIDMotorController<?>[] rightMotors,
 			InterUnitRatio<RotationUnits, DistanceUnits> motorRotationsToDistanceDriven, PIDConstants rotationConstants,

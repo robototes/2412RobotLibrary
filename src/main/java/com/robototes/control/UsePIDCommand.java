@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 @Deprecated
 public class UsePIDCommand<T extends IUnit<T>> extends Command {
 
-	private PIDSubsystem<T> PIDSubsystem;
 	private T finalPosition;
 	private double howCloseMustItBe;
+	private PIDSubsystem<T> PIDSubsystem;
 
 	public UsePIDCommand(PIDSubsystem<T> PIDSubsystem, T finalPosition, double howCloseMustItBe) {
 		this.PIDSubsystem = PIDSubsystem;

@@ -33,10 +33,8 @@ public class SimpleRegression {
 	 */
 	public static Equation quadraticRegression(Vector pointOne, Vector pointTwo, Vector pointThree) {
 		// Lagrange polynomial
-		double bottom1 = pointOne.x * pointOne.x - (pointTwo.x + pointThree.x) * pointOne.x
-				+ pointTwo.x * pointThree.x;
-		double bottom2 = pointTwo.x * pointTwo.x - (pointOne.x + pointThree.x) * pointTwo.x
-				+ pointOne.x * pointThree.x;
+		double bottom1 = pointOne.x * pointOne.x - (pointTwo.x + pointThree.x) * pointOne.x + pointTwo.x * pointThree.x;
+		double bottom2 = pointTwo.x * pointTwo.x - (pointOne.x + pointThree.x) * pointTwo.x + pointOne.x * pointThree.x;
 		double bottom3 = pointThree.x * pointThree.x - (pointOne.x + pointTwo.x) * pointThree.x
 				+ pointOne.x * pointTwo.x;
 

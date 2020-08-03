@@ -70,6 +70,6 @@ public class InterpolatingDouble implements Interpolable<InterpolatingDouble>, I
 	}
 
 	public Double value() {
-		return this.value;
+		return value;
 	}
 }

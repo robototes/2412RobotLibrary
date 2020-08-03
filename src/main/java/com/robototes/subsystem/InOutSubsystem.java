@@ -9,6 +9,20 @@ package com.robototes.subsystem;
  */
 public interface InOutSubsystem extends RobototesSubsystem, Invertable {
 	/**
+	 * Gets the max speed of the subsystem
+	 *
+	 * @return The max speed
+	 */
+	public double getMaxSpeed();
+
+	/**
+	 * Gets the current (last set) speed of the subsystem
+	 *
+	 * @return The current speed
+	 */
+	public double getSpeed();
+
+	/**
 	 * Runs the subsystem in at full speed
 	 */
 	public void in();
@@ -17,11 +31,6 @@ public interface InOutSubsystem extends RobototesSubsystem, Invertable {
 	 * Runs the subsystem out at full speed
 	 */
 	public void out();
-
-	/**
-	 * Stops the subsytem
-	 */
-	public void stop();
 
 	/**
 	 * Sets the speed of the subsystem
@@ -38,16 +47,7 @@ public interface InOutSubsystem extends RobototesSubsystem, Invertable {
 	public void setMaxSpeed(double maxSpeed);
 
 	/**
-	 * Gets the max speed of the subsystem
-	 *
-	 * @return The max speed
+	 * Stops the subsytem
 	 */
-	public double getMaxSpeed();
-
-	/**
-	 * Gets the current (last set) speed of the subsystem
-	 *
-	 * @return The current speed
-	 */
-	public double getSpeed();
+	public void stop();
 }

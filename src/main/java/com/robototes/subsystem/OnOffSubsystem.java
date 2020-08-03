@@ -9,12 +9,12 @@ package com.robototes.subsystem;
 public interface OnOffSubsystem extends RobototesSubsystem, Invertable {
 
 	/**
-	 * Turns on the subsystem
-	 */
-	public void on();
-
-	/**
 	 * Turns off the subsystem
 	 */
 	public void off();
+
+	/**
+	 * Turns on the subsystem
+	 */
+	public void on();
 }

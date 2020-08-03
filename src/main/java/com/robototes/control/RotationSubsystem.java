@@ -14,9 +14,9 @@ import com.robototes.units.UnitTypes.RotationUnits;
 @Deprecated
 public class RotationSubsystem implements PIDSubsystem<Rotations> {
 
+	private Rotations currentReference = new Rotations(0);
 	private PIDMotorController<?>[] motors;
 	private InterUnitRatio<RotationUnits, RotationUnits> rotationsToDistance;
-	private Rotations currentReference = new Rotations(0);
 
 	RotationSubsystem(PIDMotorController<?>[] motors, InterUnitRatio<RotationUnits, RotationUnits> ratio) {
 		this.motors = motors;

@@ -10,20 +10,15 @@ import com.robototes.math.MathUtils;
  */
 public class PIDController {
 
+	/**
+	 * The constants for the PID Controller
+	 */
+	public PIDConstants constants;
+
 	/*
 	 * The sum of the error, used with I
 	 */
 	public double errorSum;
-
-	/**
-	 * The past error, used with D
-	 */
-	public double pastError;
-
-	/**
-	 * The minimum value for the output
-	 */
-	public double minOutput = Double.MIN_VALUE;
 
 	/**
 	 * Maximum value for the output
@@ -31,9 +26,14 @@ public class PIDController {
 	public double maxOutput = Double.MAX_VALUE;
 
 	/**
-	 * The constants for the PID Controller
+	 * The minimum value for the output
 	 */
-	public PIDConstants constants;
+	public double minOutput = Double.MIN_VALUE;
+
+	/**
+	 * The past error, used with D
+	 */
+	public double pastError;
 
 	/**
 	 *

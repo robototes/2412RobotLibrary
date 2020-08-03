@@ -36,14 +36,14 @@ public class SimpleMotorSubsystem extends SimpleSubsystem {
 		controller.set(-1);
 	}
 
-	// Stop the motor
-	public void stop() {
-		controller.set(0);
-	}
-
 	// Set the motor to run at a set speed
 	public void set(double speed) {
 		controller.set(speed);
+	}
+
+	// Stop the motor
+	public void stop() {
+		controller.set(0);
 	}
 
 }

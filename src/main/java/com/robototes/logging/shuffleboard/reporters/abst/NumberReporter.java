@@ -18,6 +18,17 @@ public abstract class NumberReporter<S extends NumberReporter<S>> extends Abstra
 		super(getter, name, tabName);
 	}
 
+	@Override
+	public void update() {
+		double value = entry.getDouble(Double.NaN);
+
+		if (value == oldValue) {
+			double newValue = getter.get();
+			entry.setDouble(newValue);
+			oldValue = newValue;
+		}
+	}
+
 	/**
 	 * Sets the min and max of the widget
 	 *
@@ -31,17 +42,6 @@ public abstract class NumberReporter<S extends NumberReporter<S>> extends Abstra
 		}
 
 		return withProperties(Map.of("min", min, "max", max));
-	}
-
-	@Override
-	public void update() {
-		double value = entry.getDouble(Double.NaN);
-
-		if (value == oldValue) {
-			double newValue = getter.get();
-			entry.setDouble(newValue);
-			oldValue = newValue;
-		}
 	}
 
 }

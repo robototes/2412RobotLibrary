@@ -16,11 +16,11 @@ import com.robototes.utils.StringUtils;
  */
 public class InterUnitRatio<K extends IUnitType<?>, V extends IUnitType<?>> implements Ratio<IUnit<?>> {
 
-	public double ratio;
 	public String from;
-	public String to;
-
 	public K fromType;
+	public double ratio;
+
+	public String to;
 	public V toType;
 
 	/**

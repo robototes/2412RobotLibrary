@@ -11,6 +11,16 @@ import static java.lang.Math.atan2;
 public class Vector {
 
 	/**
+	 * angle of the Vector in radians, (1,0) is 0 radians
+	 */
+	public double angle;
+
+	/**
+	 * length of the Vector
+	 */
+	public double length;
+
+	/**
 	 * x value of the Vector
 	 */
 	public double x;
@@ -19,16 +29,6 @@ public class Vector {
 	 * y value of the Vector
 	 */
 	public double y;
-
-	/**
-	 * length of the Vector
-	 */
-	public double length;
-
-	/**
-	 * angle of the Vector in radians, (1,0) is 0 radians
-	 */
-	public double angle;
 
 	/**
 	 * Constructs a vector with all values at 0

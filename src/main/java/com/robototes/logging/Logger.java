@@ -16,24 +16,16 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class Logger {
 
-	private File m_logFile;
-	private FileOutputStream m_outputStream;
-
-	private LogType m_minLogType;
-
-	private static Logger m_instance = null;
 	private static boolean m_initialized = false;
+	private static Logger m_instance = null;
 
-	private Logger(String fileName, LogType minLogType) {
-		m_minLogType = minLogType;
-		m_logFile = new File(Filesystem.getDeployDirectory().getAbsolutePath() + fileName);
-		try {
-			m_logFile.createNewFile();
-			m_outputStream = new FileOutputStream(m_logFile);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
+	/**
+	 * Gets the instance of the Logger
+	 *
+	 * @return Logger instance
+	 */
+	public static Logger getInstance() {
+		return m_instance;
 	}
 
 	/**
@@ -49,6 +41,23 @@ public class Logger {
 
 		m_instance = new Logger(fileName, minLogType);
 		m_initialized = true;
+	}
+	private File m_logFile;
+
+	private LogType m_minLogType;
+
+	private FileOutputStream m_outputStream;
+
+	private Logger(String fileName, LogType minLogType) {
+		m_minLogType = minLogType;
+		m_logFile = new File(Filesystem.getDeployDirectory().getAbsolutePath() + fileName);
+		try {
+			m_logFile.createNewFile();
+			m_outputStream = new FileOutputStream(m_logFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
@@ -68,15 +77,6 @@ public class Logger {
 			m_outputStream.write(data.getBytes());
 		} catch (Exception e) {
 		}
-	}
-
-	/**
-	 * Gets the instance of the Logger
-	 *
-	 * @return Logger instance
-	 */
-	public static Logger getInstance() {
-		return m_instance;
 	}
 
 }
