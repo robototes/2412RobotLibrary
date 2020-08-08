@@ -42,14 +42,14 @@ public enum LogType {
 	 */
 	public static LogType getLogTypeFromNumber(int logLevel) {
 		switch (logLevel) {
-			case 4:
-				return CRITICAL;
-			case 3:
-				return WARNING;
-			case 2:
-				return UPDATE;
-			default:
-				return DEFAULT;
+		case 4:
+			return CRITICAL;
+		case 3:
+			return WARNING;
+		case 2:
+			return UPDATE;
+		default:
+			return DEFAULT;
 		}
 	}
 

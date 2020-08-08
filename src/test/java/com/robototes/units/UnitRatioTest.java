@@ -45,10 +45,8 @@ public class UnitRatioTest {
 
 	@Test
 	public void testUnitRatioFromTwoRatios() {
-		UnitRatio<Distance> mmToCm = new UnitRatio<>(1d / 10d, DistanceUnits.MILLIMETER,
-				DistanceUnits.CENTIMETER);
-		UnitRatio<Distance> mmToMeter = new UnitRatio<>(1d / 1000d, DistanceUnits.MILLIMETER,
-				DistanceUnits.METER);
+		UnitRatio<Distance> mmToCm = new UnitRatio<>(1d / 10d, DistanceUnits.MILLIMETER, DistanceUnits.CENTIMETER);
+		UnitRatio<Distance> mmToMeter = new UnitRatio<>(1d / 1000d, DistanceUnits.MILLIMETER, DistanceUnits.METER);
 
 		assertEquals("Combo ratio is correct", mmToMeter, new UnitRatio<Distance>(mmToCm, cmToMeter));
 

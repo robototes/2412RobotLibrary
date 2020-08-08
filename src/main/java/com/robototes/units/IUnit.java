@@ -13,7 +13,7 @@ import com.robototes.units.UnitTypes.IUnitType;
 public interface IUnit<T extends IUnit<?>> extends Operable<T> {
 	/**
 	 *
-	 * @param          <K> UnitType of the unit
+	 * @param <K>      UnitType of the unit
 	 * @param unitType New unit type
 	 * @return value of the unit converted to the new unit.
 	 */
