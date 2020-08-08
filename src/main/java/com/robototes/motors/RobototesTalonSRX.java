@@ -1,11 +1,11 @@
 package com.robototes.motors;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-public class RobototesTalonFX extends WPI_TalonFX implements Motor {
+public class RobototesTalonSRX extends WPI_TalonSRX implements Motor {
 
-	public RobototesTalonFX(int channel) {
-		super(channel);
+	public RobototesTalonSRX(int deviceNumber) {
+		super(deviceNumber);
 	}
 
 	@Override
