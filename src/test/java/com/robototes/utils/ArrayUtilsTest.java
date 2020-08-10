@@ -25,6 +25,15 @@ public class ArrayUtilsTest {
 		Double[] arrayOne = { 1d, 2d, 3d };
 
 		assertEquals("Printing an array", ArrayUtils.printArray(arrayOne), "[0]: 1.0, [1]: 2.0, [2]: 3.0");
+		
+		System.out.println("Waiting a bit");
+		for (int i=0; i<5; i++) {
+			try {
+				Thread.sleep(1001);
+				System.out.println(i);
+			} catch (InterruptedException ignored) {}
+		}
+		System.out.println("Done!");
 
 	}
 
