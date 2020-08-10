@@ -20,7 +20,6 @@ public class RobototesCANSparkMaxTest {
 	public void before() {
 		testMotor = new RobototesCANSparkMaxSIM(motorID, MotorType.kBrushless, true);
 		motorID++;
-		System.out.println("Created: " + testMotor);
 	}
 
 	@Test
@@ -49,9 +48,7 @@ public class RobototesCANSparkMaxTest {
 
 	@After
 	public void after() {
-		System.out.println("Closing: " + testMotor);
 		testMotor.close();
-		testMotor = null;
 	}
 
 	public void assertSpeed(String testName, double speed) {
