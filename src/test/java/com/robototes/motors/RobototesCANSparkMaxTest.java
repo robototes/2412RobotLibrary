@@ -14,10 +14,13 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 
 public class RobototesCANSparkMaxTest {
 	RobototesCANSparkMaxSIM testMotor;
+	private static int motorID = 0;
 
 	@Before
 	public void before() {
-		testMotor = new RobototesCANSparkMaxSIM(0, MotorType.kBrushless, true);
+		testMotor = new RobototesCANSparkMaxSIM(motorID, MotorType.kBrushless, true);
+		motorID++;
+		System.out.println("Created: " + testMotor);
 	}
 
 	@Test
@@ -46,7 +49,9 @@ public class RobototesCANSparkMaxTest {
 
 	@After
 	public void after() {
+		System.out.println("Closing: " + testMotor);
 		testMotor.close();
+		testMotor = null;
 	}
 
 	public void assertSpeed(String testName, double speed) {
