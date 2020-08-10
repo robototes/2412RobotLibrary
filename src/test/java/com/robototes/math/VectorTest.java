@@ -16,6 +16,15 @@ public class VectorTest {
 		Vector three = new Vector(-1, 0);
 
 		assertEquals("Angle between two opposite vectors", one.angleBetween(three), Math.PI, MathUtils.EPSILON);
+
+		System.out.println("Waiting a bit");
+		for (int i=0; i<5; i++) {
+			try {
+				Thread.sleep(1000);
+				System.out.println(i);
+			} catch (InterruptedException ignored) {}
+		}
+		System.out.println("Done!");
 	}
 
 	@Test
