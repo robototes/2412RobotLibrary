@@ -85,7 +85,6 @@ publishing {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/robototes/2412RobotLibrary")
-            artifactId  = "2412robotlibrary"
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
                 password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
@@ -95,6 +94,7 @@ publishing {
     publications {
         gpr(MavenPublication) {
             from(components.java)
+            artifactId  = "2412robotlibrary"
         }
     }
 }
