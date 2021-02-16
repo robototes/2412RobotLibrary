@@ -14,10 +14,12 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 
 public class RobototesCANSparkMaxTest {
 	RobototesCANSparkMaxSIM testMotor;
+	private static int motorID = 0;
 
 	@Before
 	public void before() {
-		testMotor = new RobototesCANSparkMaxSIM(0, MotorType.kBrushless, true);
+		testMotor = new RobototesCANSparkMaxSIM(motorID, MotorType.kBrushless, true);
+		motorID++;
 	}
 
 	@Test
